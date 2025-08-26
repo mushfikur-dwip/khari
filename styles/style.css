@@ -1,0 +1,99 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* Custom colors for main and secondary */
+    .bg-main {
+      background-color: #0177CC !important;
+    }
+
+    .bg-secondary {
+      background-color: #004B8C !important;
+    }
+
+    .text-main {
+      color: #0177CC !important;
+    }
+
+    .text-secondary {
+      color: #004B8C !important;
+    }
+
+    .border-main {
+      border-color: #0177CC !important;
+    }
+
+    .border-secondary {
+      border-color: #004B8C !important;
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    li,
+    ol {
+      font-family: 'Hind Siliguri', sans-serif !important;
+    }
+
+    .marquee {
+      animation: marquee 30s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .carousel-item {
+      display: none;
+    }
+
+    .carousel-item.active {
+      display: block;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .mobile-menu {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+
+/* Marquee Animation */
+@keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .animate-marquee {
+      animation: marquee 40s linear infinite;
+    }
