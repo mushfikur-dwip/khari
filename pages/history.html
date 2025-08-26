@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>খারিক্ষ্যং উচ্চ বিদ্যালয়</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg">
+        <!-- Top Header -->
+        <div class="bg-secondary">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between py-4">
+                    <div class="flex items-center space-x-4">
+                        <img src="../images/logo.png" alt="স্কুল লোগো" class="h-16 w-16 rounded-full bg-white p-0.5">
+                    </div>
+                    <div class="text-center flex-1">
+                        <h1 class="text-white text-2xl md:text-4xl font-bold">খারিক্ষ্যং উচ্চ বিদ্যালয়</h1>
+                        <p class="text-white text-sm md:text-lg mt-1">রাঙ্গামাটি সদর, রাঙ্গামাটি</p>
+                        <p class="text-white text-xs md:text-sm">স্কুল কোডঃ ৪৭৬০ | এমপিও: ০৪১০০১১৩০১</p>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="mobile-menu-btn" class="text-white text-2xl">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <!-- Navbar (Desktop) -->
+        <nav class="bg-main hidden md:block">
+            <div class="container mx-auto px-4">
+                <ul class="flex space-x-6 py-3 justify-center">
+                    <li><a href="/" class="text-white hover:text-yellow-300 transition-colors">প্রচ্ছদ</a></li>
+                    <li class="dropdown relative">
+                        <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+                            onclick="toggleDropdown('about-dropdown')">
+                            আমাদের সম্পর্কে
+                        </a>
+                        <ul id="about-dropdown"
+                            class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">প্রতিষ্ঠানের
+                                    ইতিহাস</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">পরিচালনা পর্ষদ</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষকদের তথ্য</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কর্মচারীদের তথ্য</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কৃতি শিক্ষার্থী</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown relative">
+                        <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+                            onclick="toggleDropdown('academic-dropdown')">
+                            একাডেমিক তথ্য <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul id="academic-dropdown"
+                            class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষার্থীর তথ্য</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শূণ্যপদের তালিকা</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">ছুটির তালিকা</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">ক্লাস রুটিন</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown relative">
+                        <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+                            onclick="toggleDropdown('admin-dropdown')">
+                            প্রশাসনিক তথ্য <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul id="admin-dropdown"
+                            class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষকদের তথ্য</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কর্মচারীদের তথ্য</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কৃতি শিক্ষার্থী</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown relative">
+                        <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+                            onclick="toggleDropdown('committee-dropdown')">
+                            ম্যানেজিং কমিটি <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul id="committee-dropdown"
+                            class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">সভাপতি</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">সদস্য</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">সচিব</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown relative">
+                        <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+                            onclick="toggleDropdown('links-dropdown')">
+                            গুরুত্বপূর্ণ লিংক <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul id="links-dropdown"
+                            class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">ঢাকা শিক্ষা বোর্ড</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষা অধিদপ্তর</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষা
+                                    মন্ত্রণালয়</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">এনসিটিবি</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="text-white hover:text-yellow-300 transition-colors">যোগাযোগ</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed inset-y-0 left-0 w-64 bg-blue-800 z-50 md:hidden">
+            <div class="p-4">
+                <button id="close-menu" class="text-white text-2xl mb-4" onclick="toggleMobileMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul class="space-y-3">
+                    <li><a href="/"
+                            class="block text-white py-3 px-4 border-b border-blue-700 hover:bg-blue-700 transition-colors">প্রচ্ছদ</a>
+                    </li>
+
+                    <!-- Mobile Dropdown -->
+                    <li class="mobile-dropdown">
+                        <button
+                            class="w-full text-left text-white py-3 px-4 border-b border-blue-700 hover:bg-blue-700 transition-colors flex items-center justify-between"
+                            onclick="toggleMobileDropdown('about-mobile')">
+                            আমাদের সম্পর্কে
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <ul id="about-mobile" class="mobile-submenu hidden bg-blue-900 pl-4">
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">প্রতিষ্ঠানের
+                                    ইতিহাস</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">পরিচালনা
+                                    পর্ষদ</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">শিক্ষকদের
+                                    তথ্য</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">কর্মচারীদের
+                                    তথ্য</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">কৃতি
+                                    শিক্ষার্থী</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- More mobile dropdowns here... -->
+                    <li class="mobile-dropdown">
+                        <button
+                            class="w-full text-left text-white py-3 px-4 border-b border-blue-700 hover:bg-blue-700 transition-colors flex items-center justify-between"
+                            onclick="toggleMobileDropdown('academic-mobile')">
+                            একাডেমিক তথ্য
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <ul id="academic-mobile" class="mobile-submenu hidden bg-blue-900 pl-4">
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">শিক্ষার্থীর
+                                    তথ্য</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">শূণ্যপদের
+                                    তালিকা</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">ছুটির
+                                    তালিকা</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">ক্লাস
+                                    রুটিন</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- More mobile dropdowns here... -->
+                    <li class="mobile-dropdown">
+                        <button
+                            class="w-full text-left text-white py-3 px-4 border-b border-blue-700 hover:bg-blue-700 transition-colors flex items-center justify-between"
+                            onclick="toggleMobileDropdown('admin-mobile')">
+                            প্রশাসনিক তথ্য
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <ul id="admin-mobile" class="mobile-submenu hidden bg-blue-900 pl-4">
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">শিক্ষকদের
+                                    তথ্য</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">কর্মচারীদের
+                                    তথ্য</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">কৃতি
+                                    শিক্ষার্থী</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- More mobile dropdowns here... -->
+                    <li class="mobile-dropdown">
+                        <button
+                            class="w-full text-left text-white py-3 px-4 border-b border-blue-700 hover:bg-blue-700 transition-colors flex items-center justify-between"
+                            onclick="toggleMobileDropdown('committee-mobile')">
+                            ম্যানেজিং কমিটি
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <ul id="committee-mobile" class="mobile-submenu hidden bg-blue-900 pl-4">
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">সভাপতি</a>
+                            </li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">সদস্য</a>
+                            </li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">সচিব</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- More mobile dropdowns here... -->
+                    <li class="mobile-dropdown">
+                        <button
+                            class="w-full text-left text-white py-3 px-4 border-b border-blue-700 hover:bg-blue-700 transition-colors flex items-center justify-between"
+                            onclick="toggleMobileDropdown('links-mobile')">
+                            গুরুত্বপূর্ণ লিংক
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <ul id="links-mobile" class="mobile-submenu hidden bg-blue-900 pl-4">
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">ঢাকা
+                                    শিক্ষা
+                                    বোর্ড</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">শিক্ষা
+                                    অধিদপ্তর</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">শিক্ষা
+                                    মন্ত্রণালয়</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">এনসিটিবি</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#"
+                            class="block text-white py-3 px-4 border-b border-blue-700 hover:bg-blue-700 transition-colors">যোগাযোগ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Footer -->
+    <!-- <footer
+      class="bg-[url(https://jbghs.netlify.app/assets/image/footer_top_bg.png)] bg-no-repeat text-white mt-12 bg-contain bg-bottom shadow-[0_0_0_2000px_rgba(255,255,255,0.77)]"> -->
+    <footer
+        class="px-[15px] py-[40px] bg-[url('https://jbghs.netlify.app/assets/image/footer_top_bg.png')] bg-bottom bg-no-repeat bg-contain shadow-[inset_0_0_0_2000px_rgba(255,255,255,0.77)]">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <h4 class="text-xl text-gray-800 font-semibold">খারিক্ষ্যং উচ্চ বিদ্যালয়</h4>
+                    <p>স্কুল কোডঃ ৪৭৬০ | এমপিও: ০৪১০০১১৩০১</p>
+                    <p class="mb-2 text-gray-600">প্রধান শিক্ষক: গোবিন্দ চন্দ্র দাস</p>
+                    <div class="flex space-x-4 mt-4 justify-center">
+                        <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fab fa-facebook text-2xl"></i></a>
+                        <a href="mailto:ictlab114296@gmail.com" class="text-red-400 hover:text-red-300"><i
+                                class="fas fa-envelope text-2xl"></i></a>
+                        <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fab fa-twitter text-2xl"></i></a>
+                        <a href="#" class="text-red-600 hover:text-red-500"><i class="fab fa-youtube text-2xl"></i></a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h5 class="font-semibold mb-2">যোগাযোগ</h5>
+                    <p class="text-gray-800">রাঙ্গামাটি সদর, রাঙ্গামাটি</p>
+                    <!-- <p class="text-gray-800">এলেঙ্গা, কালিহাতি, টাঙ্গাইল</p> -->
+                    <p class="text-gray-800">মোবাইল: ০১৩০৩২৫২৩১৭</p>
+                    <p class="text-gray-800">ইমেইল: school@gmail.com</p>
+                </div>
+                <div class="text-center">
+                    <h5 class="font-semibold mb-2 text-gray-800">প্রযুক্তি সহায়তায়</h5>
+                    <p class="text-gray-800">মুশফিকুর রহমান</p>
+                    <p class="text-gray-800">সফটওয়্যার ইঞ্জিনিয়ার</p>
+                    <p class="text-gray-800">ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটি</p>
+                    <p class="text-gray-800">হোয়াটসঅ্যাপ: <a href="https://wa.me/+8801580646908">01303252317</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Carousel
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        document.getElementById('next-btn').addEventListener('click', nextSlide);
+        document.getElementById('prev-btn').addEventListener('click', prevSlide);
+
+        // Auto-advance carousel
+        setInterval(nextSlide, 5000);
+
+        // Digital Clock
+        function updateClock() {
+            const now = new Date();
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+            const dayName = days[now.getDay()];
+            const day = now.getDate();
+            const month = months[now.getMonth()];
+            const year = now.getFullYear();
+
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            document.getElementById('date').textContent = `${dayName} ${day} ${month} ${year}`;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+
+        // Toggle desktop dropdowns
+        function toggleDropdown(id) {
+            const dropdown = document.getElementById(id);
+            dropdown.classList.toggle('hidden');
+        }
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Toggle mobile dropdowns
+        function toggleMobileDropdown(id) {
+            const dropdown = document.getElementById(id);
+            dropdown.classList.toggle('hidden');
+        }
+    </script>
+    <script src="js/app.js"></script>
+    </body>
+    
+    </html>

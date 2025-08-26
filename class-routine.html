@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ক্লাস রুটিন - খারিক্ষ্যং উচ্চ বিদ্যালয়</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50">
+  <!-- Header -->
+  <header class="bg-white shadow-lg">
+    <!-- Top Header -->
+    <div class="bg-secondary">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-4">
+          <div class="flex items-center space-x-4">
+            <img src="./images/logo.png" alt="স্কুল লোগো" class="h-16 w-16 rounded-full bg-white p-0.5">
+          </div>
+          <div class="text-center flex-1">
+            <h1 class="text-white text-2xl md:text-4xl font-bold">খারিক্ষ্যং উচ্চ বিদ্যালয়</h1>
+            <p class="text-white text-sm md:text-lg mt-1">রাঙ্গামাটি সদর, রাঙ্গামাটি</p>
+            <p class="text-white text-xs md:text-sm">স্কুল কোডঃ ৪৭৬০ | এমপিও: ০৪১০০১১৩০১</p>
+          </div>
+          <div class="md:hidden">
+            <button id="mobile-menu-btn" class="text-white text-2xl">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-main hidden md:block">
+      <div class="container mx-auto px-4">
+        <ul class="flex space-x-6 py-3 justify-center">
+          <li><a href="index.html" class="text-white hover:text-yellow-300 transition-colors">প্রচ্ছদ</a></li>
+          <li class="dropdown relative">
+            <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+              onclick="toggleDropdown('about-dropdown')">
+              আমাদের সম্পর্কে <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </a>
+            <ul id="about-dropdown"
+              class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+              <li><a href="history.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">প্রতিষ্ঠানের ইতিহাস</a></li>
+              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">পরিচালনা পর্ষদ</a></li>
+              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষকদের তথ্য</a></li>
+              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কর্মচারীদের তথ্য</a></li>
+              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কৃতি শিক্ষার্থী</a></li>
+            </ul>
+          </li>
+          <li class="dropdown relative">
+            <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+              onclick="toggleDropdown('academic-dropdown')">
+              একাডেমিক তথ্য <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </a>
+            <ul id="academic-dropdown"
+              class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+              <li><a href="student-info.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষার্থীর তথ্য</a></li>
+              <li><a href="vacant-posts.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শূণ্যপদের তালিকা</a></li>
+              <li><a href="holidays.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">ছুটির তালিকা</a></li>
+              <li><a href="class-routine.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">ক্লাস রুটিন</a></li>
+            </ul>
+          </li>
+          <li class="dropdown relative">
+            <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+              onclick="toggleDropdown('admin-dropdown')">
+              প্রশাসনিক তথ্য <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </a>
+            <ul id="admin-dropdown"
+              class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষকদের তথ্য</a></li>
+              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কর্মচারীদের তথ্য</a></li>
+              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কৃতি শিক্ষার্থী</a></li>
+            </ul>
+          </li>
+          <li class="dropdown relative">
+            <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+              onclick="toggleDropdown('committee-dropdown')">
+              ম্যানেজিং কমিটি <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </a>
+            <ul id="committee-dropdown"
+              class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">সভাপতি</a></li>
+              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">সদস্য</a></li>
+              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">সচিব</a></li>
+            </ul>
+          </li>
+          <li class="dropdown relative">
+            <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+              onclick="toggleDropdown('links-dropdown')">
+              গুরুত্বপূর্ণ লিংক <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </a>
+            <ul id="links-dropdown"
+              class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">ঢাকা শিক্ষা বোর্ড</a></li>
+              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষা অধিদপ্তর</a></li>
+              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষা মন্ত্রণালয়</a></li>
+              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">এনসিটিবি</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="text-white hover:text-yellow-300 transition-colors">যোগাযোগ</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 left-0 w-64 bg-blue-800 z-50 md:hidden">
+      <div class="p-4">
+        <button id="close-menu" class="text-white text-2xl mb-4" onclick="toggleMobileMenu()">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul class="space-y-3">
+          <li><a href="index.html"
+              class="block text-white py-3 px-4 border-b border-blue-700 hover:bg-blue-700 transition-colors">প্রচ্ছদ</a>
+          </li>
+          <!-- Mobile menus... -->
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white shadow-sm border-b">
+    <div class="container mx-auto px-4 py-3">
+      <nav class="text-sm text-gray-600">
+        <a href="index.html" class="hover:text-blue-600">প্রচ্ছদ</a>
+        <span class="mx-2">/</span>
+        <a href="#" class="hover:text-blue-600">একাডেমিক তথ্য</a>
+        <span class="mx-2">/</span>
+        <span class="text-gray-800 font-medium">ক্লাস রুটিন</span>
+      </nav>
+    </div>
+  </div>
+
+  <main class="container mx-auto px-4 py-8">
+    <!-- Page Title -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">ক্লাস রুটিন ২০২৫</h1>
+      <div class="w-24 h-1 bg-purple-600 mx-auto rounded-full"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <!-- Main Content -->
+      <div class="lg:col-span-3">
+        <!-- Class Selection -->
+        <div class="bg-white rounded-lg shadow-lg mb-6">
+          <div class="bg-gradient-to-r from-purple-600 to-blue-600 text-white text-center py-3 rounded-t-lg">
+            <h3 class="text-xl font-semibold">শ্রেণি নির্বাচন করুন</h3>
+          </div>
+          <div class="p-4">
+            <div class="flex flex-wrap gap-2 justify-center">
+              <button onclick="showRoutine('class6')" class="class-btn bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors">৬ষ্ঠ শ্রেণি</button>
+              <button onclick="showRoutine('class7')" class="class-btn bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors">৭ম শ্রেণি</button>
+              <button onclick="showRoutine('class8')" class="class-btn bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg transition-colors">৮ম শ্রেণি</button>
+              <button onclick="showRoutine('class9')" class="class-btn bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg transition-colors">৯ম শ্রেণি</button>
+              <button onclick="showRoutine('class10')" class="class-btn bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition-colors active">১০ম শ্রেণি</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Class 10 Routine (Default) -->
+        <div id="class10" class="routine-table bg-white rounded-lg shadow-lg">
+          <div class="bg-gradient-to-r from-red-600 to-pink-600 text-white text-center py-4 rounded-t-lg">
+            <h2 class="text-2xl font-semibold flex items-center justify-center">
+              <i class="fas fa-calendar-week mr-3"></i>
+              দশম শ্রেণির সাপ্তাহিক রুটিন
+            </h2>
+          </div>
+          
+          <div class="p-6">
+            <div class="overflow-x-auto">
+              <table class="w-full border-collapse border border-gray-300">
+                <thead>
+                  <tr class="bg-red-100">
+                    <th class="border border-gray-300 px-3 py-3 text-left font-semibold">দিন</th>
+                    <th class="border border-gray-300 px-3 py-3 text-center font-semibold text-sm">১ম পিরিয়ড<br>(৯:০০-৯:৪০)</th>
+                    <th class="border border-gray-300 px-3 py-3 text-center font-semibold text-sm">২য় পিরিয়ড<br>(৯:৪০-১০:২০)</th>
+                    <th class="border border-gray-300 px-3 py-3 text-center font-semibold text-sm">৩য় পিরিয়ড<br>(১০:২০-১১:০০)</th>
+                    <th class="border border-gray-300 px-3 py-3 text-center font-semibold text-sm">বিরতি<br>(১১:০০-১১:২০)</th>
+                    <th class="border border-gray-300 px-3 py-3 text-center font-semibold text-sm">৪র্থ পিরিয়ড<br>(১১:২০-১২:০০)</th>
+                    <th class="border border-gray-300 px-3 py-3 text-center font-semibold text-sm">৫ম পিরিয়ড<br>(১২:০০-১২:৪০)</th>
+                    <th class="border border-gray-300 px-3 py-3 text-center font-semibold text-sm">৬ষ্ঠ পিরিয়ড<br>(১২:৪০-১:২০)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-300 px-3 py-3 font-medium bg-blue-50">রবিবার</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-blue-100">বাংলা</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-green-100">ইংরেজি</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-purple-100">গণিত</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-gray-100">বিরতি</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-yellow-100">পদার্থবিজ্ঞান</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-pink-100">রসায়ন</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-cyan-100">জীববিজ্ঞান</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-300 px-3 py-3 font-medium bg-green-50">সোমবার</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-green-100">ইংরেজি</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-purple-100">গণিত</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-blue-100">বাংলা</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-gray-100">বিরতি</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-pink-100">রসায়ন</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-cyan-100">জীববিজ্ঞান</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-orange-100">তথ্য ও যোগাযোগ</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-300 px-3 py-3 font-medium bg-purple-50">মঙ্গলবার</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-purple-100">গণিত</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-yellow-100">পদার্থবিজ্ঞান</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-green-100">ইংরেজি</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-gray-100">বিরতি</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-blue-100">বাংলা</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-red-100">ইসলাম ধর্ম</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-teal-100">উচ্চতর গণিত</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-300 px-3 py-3 font-medium bg-yellow-50">বুধবার</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-yellow-100">পদার্থবিজ্ঞান</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-blue-100">বাংলা</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-pink-100">রসায়ন</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-gray-100">বিরতি</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-purple-100">গণিত</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-cyan-100">জীববিজ্ঞান</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-green-100">ইংরেজি</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-300 px-3 py-3 font-medium bg-pink-50">বৃহস্পতিবার</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-pink-100">রসায়ন</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-cyan-100">জীববিজ্ঞান</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-teal-100">উচ্চতর গণিত</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-gray-100">বিরতি</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-green-100">ইংরেজি</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-blue-100">বাংলা</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-orange-100">শারীরিক শিক্ষা</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mt-4 text-center text-sm text-gray-600">
+              <p><strong>নোট:</strong> শুক্রবার সাপ্তাহিক ছুটি | শনিবার ক্লাব কার্যক্রম ও অতিরিক্ত শ্রেণি</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Class 9 Routine -->
+        <div id="class9" class="routine-table bg-white rounded-lg shadow-lg hidden">
+          <div class="bg-gradient-to-r from-yellow-600 to-orange-600 text-white text-center py-4 rounded-t-lg">
+            <h2 class="text-2xl font-semibold flex items-center justify-center">
+              <i class="fas fa-calendar-week mr-3"></i>
+              নবম শ্রেণির সাপ্তাহিক রুটিন
+            </h2>
+          </div>
+          
+          <div class="p-6">
+            <div class="overflow-x-auto">
+              <table class="w-full border-collapse border border-gray-300">
+                <thead>
+                  <tr class="bg-yellow-100">
+                    <th class="border border-gray-300 px-3 py-3 text-left font-semibold">দিন</th>
+                    <th class="border border-gray-300 px-3 py-3 text-center font-semibold text-sm">১ম পিরিয়ড<br>(৯:০০-৯:৪০)</th>
+                    <th class="border border-gray-300 px-3 py-3 text-center font-semibold text-sm">২য় পিরিয়ড<br>(৯:৪০-১০:২০)</th>
+                    <th class="border border-gray-300 px-3 py-3 text-center font-semibold text-sm">৩য় পিরিয়ড<br>(১০:২০-১১:০০)</th>
+                    <th class="border border-gray-300 px-3 py-3 text-center font-semibold text-sm">বিরতি<br>(১১:০০-১১:২০)</th>
+                    <th class="border border-gray-300 px-3 py-3 text-center font-semibold text-sm">৪র্থ পিরিয়ড<br>(১১:২০-১২:০০)</th>
+                    <th class="border border-gray-300 px-3 py-3 text-center font-semibold text-sm">৫ম পিরিয়ড<br>(১২:০০-১২:৪০)</th>
+                    <th class="border border-gray-300 px-3 py-3 text-center font-semibold text-sm">৬ষ্ঠ পিরিয়ড<br>(১২:৪০-১:২০)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-300 px-3 py-3 font-medium bg-blue-50">রবিবার</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-blue-100">বাংলা</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-green-100">ইংরেজি</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-purple-100">গণিত</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-gray-100">বিরতি</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-yellow-100">সাধারণ বিজ্ঞান</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-pink-100">সমাজবিজ্ঞান</td>
+                    <td class="border border-gray-300 px-3 py-3 text-center bg-cyan-100">তথ্য ও যোগাযোগ</td>
+                  </tr>
+                  <!-- More rows similar to class 10 but with grade 9 subjects -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other class routines (Class 6, 7, 8) - Similar structure -->
+        <div id="class8" class="routine-table bg-white rounded-lg shadow-lg hidden">
+          <!-- Class 8 routine content -->
+        </div>
+        <div id="class7" class="routine-table bg-white rounded-lg shadow-lg hidden">
+          <!-- Class 7 routine content -->
+        </div>
+        <div id="class6" class="routine-table bg-white rounded-lg shadow-lg hidden">
+          <!-- Class 6 routine content -->
+        </div>
+
+        <!-- General Information -->
+        <div class="mt-8 bg-white rounded-lg shadow-lg">
+          <div class="bg-gradient-to-r from-green-600 to-blue-600 text-white text-center py-3 rounded-t-lg">
+            <h3 class="text-xl font-semibold">সাধারণ তথ্য</h3>
+          </div>
+          <div class="p-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="text-lg font-semibold text-gray-700 mb-3">সময়সূচী</h4>
+                <ul class="space-y-2 text-gray-600">
+                  <li class="flex justify-between">
+                    <span>প্রথম ঘণ্টা:</span>
+                    <span>৯:০০ - ৯:৪০</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>দ্বিতীয় ঘণ্টা:</span>
+                    <span>৯:৪০ - ১০:২০</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>তৃতীয় ঘণ্টা:</span>
+                    <span>১০:২০ - ১১:০০</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>বিরতি:</span>
+                    <span>১১:০০ - ১১:২০</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>চতুর্থ ঘণ্টা:</span>
+                    <span>১১:২০ - ১২:০০</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>পঞ্চম ঘণ্টা:</span>
+                    <span>১২:০০ - ১২:৪০</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>ষষ্ঠ ঘণ্টা:</span>
+                    <span>১২:৪০ - ১:২০</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-700 mb-3">নিয়মাবলী</h4>
+                <ul class="space-y-2 text-gray-600">
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                    <span>প্রতিদিন সকাল ৮:৪৫ এ স্কুলে উপস্থিত হতে হবে</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                    <span>ইউনিফর্ম পরিধান বাধ্যতামূলক</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                    <span>শুক্রবার সাপ্তাহিক ছুটি</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                    <span>শনিবার ক্লাব কার্যক্রম ও অতিরিক্ত শ্রেণি</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                    <span>বিরতিতে প্রাঙ্গণের বাইরে যাওয়া নিষেধ</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="lg:col-span-1">
+        <!-- Quick Links -->
+        <div class="bg-white rounded-lg shadow-lg mb-6">
+          <div class="bg-gray-800 text-white text-center py-3 rounded-t-lg">
+            <h3 class="text-lg font-semibold">দ্রুত লিংক</h3>
+          </div>
+          <div class="p-4">
+            <ul class="space-y-2">
+              <li><a href="student-info.html" class="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2">
+                <i class="fas fa-users mr-3 text-blue-600"></i>শিক্ষার্থীর তথ্য</a></li>
+              <li><a href="vacant-posts.html" class="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2">
+                <i class="fas fa-list mr-3 text-green-600"></i>শূণ্যপদের তালিকা</a></li>
+              <li><a href="holidays.html" class="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2">
+                <i class="fas fa-calendar mr-3 text-red-600"></i>ছুটির তালিকা</a></li>
+              <li><a href="#" class="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2">
+                <i class="fas fa-download mr-3 text-yellow-600"></i>রুটিন ডাউনলোড</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Class Times -->
+        <div class="bg-white rounded-lg shadow-lg mb-6">
+          <div class="bg-purple-600 text-white text-center py-3 rounded-t-lg">
+            <h3 class="text-lg font-semibold">ক্লাসের সময়</h3>
+          </div>
+          <div class="p-4">
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span>স্কুল শুরু:</span>
+                <span class="font-semibold">৯:০০ AM</span>
+              </div>
+              <div class="flex justify-between">
+                <span>স্কুল শেষ:</span>
+                <span class="font-semibold">১:২০ PM</span>
+              </div>
+              <div class="flex justify-between">
+                <span>বিরতি:</span>
+                <span class="font-semibold">২০ মিনিট</span>
+              </div>
+              <div class="flex justify-between">
+                <span>মোট ক্লাস:</span>
+                <span class="font-semibold">৬ টি</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exam Schedule -->
+        <div class="bg-white rounded-lg shadow-lg mb-6">
+          <div class="bg-red-600 text-white text-center py-3 rounded-t-lg">
+            <h3 class="text-lg font-semibold">পরীক্ষার সময়সূচী</h3>
+          </div>
+          <div class="p-4 text-sm">
+            <div class="space-y-3">
+              <div class="border-l-4 border-blue-500 pl-3">
+                <div class="font-semibold text-gray-800">অর্ধ-বার্ষিক পরীক্ষা</div>
+                <div class="text-gray-600">জুলাই ২০২৫</div>
+              </div>
+              <div class="border-l-4 border-green-500 pl-3">
+                <div class="font-semibold text-gray-800">বার্ষিক পরীক্ষা</div>
+                <div class="text-gray-600">নভেম্বর ২০২৫</div>
+              </div>
+              <div class="border-l-4 border-purple-500 pl-3">
+                <div class="font-semibold text-gray-800">এসএসসি পরীক্ষা</div>
+                <div class="text-gray-600">ফেব্রুয়ারি ২০২৬</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="bg-white rounded-lg shadow-lg">
+          <div class="bg-blue-600 text-white text-center py-3 rounded-t-lg">
+            <h3 class="text-lg font-semibold">যোগাযোগ</h3>
+          </div>
+          <div class="p-4">
+            <div class="space-y-3 text-sm">
+              <div class="flex items-start">
+                <i class="fas fa-user-tie text-blue-600 mt-1 mr-3"></i>
+                <div>
+                  <p class="font-medium">প্রধান শিক্ষক</p>
+                  <p class="text-gray-600">গোবিন্দ চন্দ্র দাস</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <i class="fas fa-phone text-green-600 mt-1 mr-3"></i>
+                <span>০১৩০৩২৫২৩১৷</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer
+    class="px-[15px] py-[40px] bg-[url('https://jbghs.netlify.app/assets/image/footer_top_bg.png')] bg-bottom bg-no-repeat bg-contain shadow-[inset_0_0_0_2000px_rgba(255,255,255,0.77)]">
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <h4 class="text-xl text-gray-800 font-semibold">খারিক্ষ্যং উচ্চ বিদ্যালয়</h4>
+          <p>স্কুল কোডঃ ৪৭৬০ | এমপিও: ০৪১০০১১৩০১</p>
+          <p class="mb-2 text-gray-600">প্রধান শিক্ষক: গোবিন্দ চন্দ্র দাস</p>
+          <div class="flex space-x-4 mt-4 justify-center">
+            <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fab fa-facebook text-2xl"></i></a>
+            <a href="mailto:ictlab114296@gmail.com" class="text-red-400 hover:text-red-300"><i
+                class="fas fa-envelope text-2xl"></i></a>
+            <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fab fa-twitter text-2xl"></i></a>
+            <a href="#" class="text-red-600 hover:text-red-500"><i class="fab fa-youtube text-2xl"></i></a>
+          </div>
+        </div>
+        <div class="text-center">
+          <h5 class="font-semibold mb-2">যোগাযোগ</h5>
+          <p class="text-gray-800">রাঙ্গামাটি সদর, রাঙ্গামাটি</p>
+          <p class="text-gray-800">মোবাইল: ০১৩০৩২৫২৩১৭</p>
+          <p class="text-gray-800">ইমেইল: school@gmail.com</p>
+        </div>
+        <div class="text-center">
+          <h5 class="font-semibold mb-2 text-gray-800">প্রযুক্তি সহায়তায়</h5>
+          <p class="text-gray-800">মুশফিকুর রহমান</p>
+          <p class="text-gray-800">সফটওয়্যার ইঞ্জিনিয়ার</p>
+          <p class="text-gray-800">ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটি</p>
+          <p class="text-gray-800">হোয়াটসঅ্যাপ: <a href="https://wa.me/+8801580646908">01303252317</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+    });
+
+    closeMenu.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+
+    // Toggle desktop dropdowns
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      dropdown.classList.toggle('hidden');
+    }
+
+    // Toggle mobile menu
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    }
+
+    // Toggle mobile dropdowns
+    function toggleMobileDropdown(id) {
+      const dropdown = document.getElementById(id);
+      dropdown.classList.toggle('hidden');
+    }
+
+    // Show routine for selected class
+    function showRoutine(classId) {
+      // Hide all routine tables
+      const routines = document.querySelectorAll('.routine-table');
+      routines.forEach(routine => routine.classList.add('hidden'));
+      
+      // Show selected routine
+      document.getElementById(classId).classList.remove('hidden');
+      
+      // Update button styles
+      const buttons = document.querySelectorAll('.class-btn');
+      buttons.forEach(btn => btn.classList.remove('active', 'bg-gray-600'));
+      
+      // Add active style to clicked button
+      event.target.classList.add('active', 'bg-gray-600');
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+      }
+    });
+  </script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

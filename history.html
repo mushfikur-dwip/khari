@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>প্রতিষ্ঠানের ইতিহাস - খারিক্ষ্যং উচ্চ বিদ্যালয়</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg">
+        <!-- Top Header -->
+        <div class="bg-secondary">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between py-4">
+                    <div class="flex items-center space-x-4">
+                        <img src="./images/logo.png" alt="স্কুল লোগো" class="h-16 w-16 rounded-full bg-white p-0.5">
+                    </div>
+                    <div class="text-center flex-1">
+                        <h1 class="text-white text-2xl md:text-4xl font-bold">খারিক্ষ্যং উচ্চ বিদ্যালয়</h1>
+                        <p class="text-white text-sm md:text-lg mt-1">রাঙ্গামাটি সদর, রাঙ্গামাটি</p>
+                        <p class="text-white text-xs md:text-sm">স্কুল কোডঃ ৪৭৬০ | এমপিও: ০৪১০০১১৩০১</p>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="mobile-menu-btn" class="text-white text-2xl">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <!-- Navbar (Desktop) -->
+        <nav class="bg-main hidden md:block">
+            <div class="container mx-auto px-4">
+                <ul class="flex space-x-6 py-3 justify-center">
+                    <li><a href="index.html" class="text-white hover:text-yellow-300 transition-colors">প্রচ্ছদ</a></li>
+                    <li class="dropdown relative">
+                        <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+                            onclick="toggleDropdown('about-dropdown')">
+                            আমাদের সম্পর্কে
+                        </a>
+                        <!-- <ul id="about-dropdown"
+                            class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+                            <li><a href="history.html"
+                                    class="block px-4 py-2 text-gray-800 hover:bg-blue-50">প্রতিষ্ঠানের ইতিহাস</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">পরিচালনা পর্ষদ</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষকদের তথ্য</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কর্মচারীদের তথ্য</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কৃতি শিক্ষার্থী</a>
+                            </li>
+                        </ul> -->
+                    </li>
+                    <li class="dropdown relative">
+                        <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+                            onclick="toggleDropdown('academic-dropdown')">
+                            একাডেমিক তথ্য <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul id="academic-dropdown"
+                            class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষার্থীর তথ্য</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শূণ্যপদের তালিকা</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">ছুটির তালিকা</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">ক্লাস রুটিন</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown relative">
+                        <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+                            onclick="toggleDropdown('admin-dropdown')">
+                            প্রশাসনিক তথ্য <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul id="admin-dropdown"
+                            class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষকদের তথ্য</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কর্মচারীদের তথ্য</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কৃতি শিক্ষার্থী</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown relative">
+                        <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+                            onclick="toggleDropdown('committee-dropdown')">
+                            ম্যানেজিং কমিটি <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul id="committee-dropdown"
+                            class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">সভাপতি</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">সদস্য</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">সচিব</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown relative">
+                        <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+                            onclick="toggleDropdown('links-dropdown')">
+                            গুরুত্বপূর্ণ লিংক <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul id="links-dropdown"
+                            class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">ঢাকা শিক্ষা বোর্ড</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষা অধিদপ্তর</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষা
+                                    মন্ত্রণালয়</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">এনসিটিবি</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="text-white hover:text-yellow-300 transition-colors">যোগাযোগ</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed inset-y-0 left-0 w-64 bg-blue-800 z-50 md:hidden">
+            <div class="p-4">
+                <button id="close-menu" class="text-white text-2xl mb-4" onclick="toggleMobileMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul class="space-y-3">
+                    <li><a href="index.html"
+                            class="block text-white py-3 px-4 border-b border-blue-700 hover:bg-blue-700 transition-colors">প্রচ্ছদ</a>
+                    </li>
+
+                    <!-- Mobile Dropdown -->
+                    <li class="mobile-dropdown">
+                        <button
+                            class="w-full text-left text-white py-3 px-4 border-b border-blue-700 hover:bg-blue-700 transition-colors flex items-center justify-between"
+                            onclick="toggleMobileDropdown('about-mobile')">
+                            আমাদের সম্পর্কে
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <!-- <ul id="about-mobile" class="mobile-submenu hidden bg-blue-900 pl-4">
+                            <li><a href="history.html"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">প্রতিষ্ঠানের
+                                    ইতিহাস</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">পরিচালনা
+                                    পর্ষদ</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">শিক্ষকদের
+                                    তথ্য</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">কর্মচারীদের
+                                    তথ্য</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">কৃতি
+                                    শিক্ষার্থী</a></li>
+                        </ul> -->
+                    </li>
+
+                    <!-- More mobile dropdowns here... -->
+                    <li class="mobile-dropdown">
+                        <button
+                            class="w-full text-left text-white py-3 px-4 border-b border-blue-700 hover:bg-blue-700 transition-colors flex items-center justify-between"
+                            onclick="toggleMobileDropdown('academic-mobile')">
+                            একাডেমিক তথ্য
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <ul id="academic-mobile" class="mobile-submenu hidden bg-blue-900 pl-4">
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">শিক্ষার্থীর
+                                    তথ্য</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">শূণ্যপদের
+                                    তালিকা</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">ছুটির
+                                    তালিকা</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">ক্লাস
+                                    রুটিন</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- More mobile dropdowns here... -->
+                    <li class="mobile-dropdown">
+                        <button
+                            class="w-full text-left text-white py-3 px-4 border-b border-blue-700 hover:bg-blue-700 transition-colors flex items-center justify-between"
+                            onclick="toggleMobileDropdown('admin-mobile')">
+                            প্রশাসনিক তথ্য
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <ul id="admin-mobile" class="mobile-submenu hidden bg-blue-900 pl-4">
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">শিক্ষকদের
+                                    তথ্য</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">কর্মচারীদের
+                                    তথ্য</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">কৃতি
+                                    শিক্ষার্থী</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- More mobile dropdowns here... -->
+                    <li class="mobile-dropdown">
+                        <button
+                            class="w-full text-left text-white py-3 px-4 border-b border-blue-700 hover:bg-blue-700 transition-colors flex items-center justify-between"
+                            onclick="toggleMobileDropdown('committee-mobile')">
+                            ম্যানেজিং কমিটি
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <ul id="committee-mobile" class="mobile-submenu hidden bg-blue-900 pl-4">
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">সভাপতি</a>
+                            </li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">সদস্য</a>
+                            </li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">সচিব</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- More mobile dropdowns here... -->
+                    <li class="mobile-dropdown">
+                        <button
+                            class="w-full text-left text-white py-3 px-4 border-b border-blue-700 hover:bg-blue-700 transition-colors flex items-center justify-between"
+                            onclick="toggleMobileDropdown('links-mobile')">
+                            গুরুত্বপূর্ণ লিংক
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <ul id="links-mobile" class="mobile-submenu hidden bg-blue-900 pl-4">
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">ঢাকা
+                                    শিক্ষা
+                                    বোর্ড</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">শিক্ষা
+                                    অধিদপ্তর</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">শিক্ষা
+                                    মন্ত্রণালয়</a></li>
+                            <li><a href="#"
+                                    class="block text-white py-2 px-4 text-sm hover:bg-blue-700 transition-colors">এনসিটিবি</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#"
+                            class="block text-white py-3 px-4 border-b border-blue-700 hover:bg-blue-700 transition-colors">যোগাযোগ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+  
+    <main class="container mx-auto px-4 py-8">
+        <!-- Page Title -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">প্রতিষ্ঠানের ইতিহাস</h1>
+            <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-3">
+                <!-- History Content -->
+                <div class="bg-white rounded-lg shadow-lg mb-8">
+                    <div class="bg-blue-600 text-white text-center py-4 rounded-t-lg">
+                        <h2 class="text-2xl font-semibold">খারিক্ষ্যং উচ্চ বিদ্যালয়ের গৌরবময় ইতিহাস</h2>
+                    </div>
+
+                    <div class="p-6 md:p-8">
+                        <!-- Featured Image -->
+                        <div class="mb-8">
+                            <img src="./images/1.jpeg" alt="স্কুল ভবন" class="w-full rounded-lg shadow-md">
+                            <p class="text-center text-gray-600 text-sm mt-2">খারিক্ষ্যং উচ্চ বিদ্যালয়ের বর্তমান ভবন
+                            </p>
+                        </div>
+
+                        <!-- History Timeline -->
+                        <div class="space-y-8">
+                            <!-- Establishment -->
+                            <div class="border-l-4 border-blue-500 pl-6">
+                                <div class="flex items-center mb-3">
+                                    <div
+                                        class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4">
+                                        ১</div>
+                                    <h3 class="text-xl font-semibold text-blue-700">প্রতিষ্ঠার সূচনা</h3>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <p class="text-gray-700 leading-relaxed text-justify">
+                                        ১৯৫৫ সালে স্থানীয় শিক্ষানুরাগী ব্যক্তিবর্গের উদ্যোগে খারিক্ষ্যং উচ্চ বিদ্যালয়
+                                        প্রতিষ্ঠিত হয়।
+                                        পার্বত্য চট্টগ্রামের রাঙ্গামাটি জেলার এই প্রত্যন্ত অঞ্চলে শিক্ষার আলো ছড়িয়ে
+                                        দেওয়ার মহান উদ্দেশ্যে
+                                        এই প্রতিষ্ঠানের যাত্রা শুরু হয়। প্রাথমিকভাবে মাত্র ৫০ জন শিক্ষার্থী নিয়ে একটি
+                                        ছোট টিনের ঘরে
+                                        শ্রেণি কার্যক্রম শুরু হয়েছিল।
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Early Years -->
+                            <div class="border-l-4 border-green-500 pl-6">
+                                <div class="flex items-center mb-3">
+                                    <div
+                                        class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4">
+                                        ২</div>
+                                    <h3 class="text-xl font-semibold text-green-700">প্রাথমিক যুগ (১৯৫৫-১৯৭০)</h3>
+                                </div>
+                                <div class="bg-green-50 p-4 rounded-lg">
+                                    <p class="text-gray-700 leading-relaxed text-justify">
+                                        প্রাথমিক পর্যায়ে স্কুলটি শুধুমাত্র ষষ্ঠ থেকে অষ্টম শ্রেণি পর্যন্ত পাঠদান করত।
+                                        ১৯৬২ সালে নবম শ্রেণি
+                                        এবং ১৯৬৫ সালে দশম শ্রেণি চালু হয়। স্থানীয় চাকমা, মারমা ও ত্রিপুরা সম্প্রদায়ের
+                                        পাশাপাশি বাঙালি
+                                        শিক্ষার্থীরাও এই প্রতিষ্ঠানে অধ্যয়ন করতে শুরু করে। ১৯৭০ সালে প্রথম এসএসসি
+                                        পরীক্ষায় অংশগ্রহণ
+                                        করে ৮৫% পাস করার গৌরব অর্জন করে।
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Growth Period -->
+                            <div class="border-l-4 border-purple-500 pl-6">
+                                <div class="flex items-center mb-3">
+                                    <div
+                                        class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4">
+                                        ৩</div>
+                                    <h3 class="text-xl font-semibold text-purple-700">উন্নতির যুগ (১৯৭১-১৯৯০)</h3>
+                                </div>
+                                <div class="bg-purple-50 p-4 rounded-lg">
+                                    <p class="text-gray-700 leading-relaxed text-justify">
+                                        স্বাধীনতার পর থেকে স্কুলটি দ্রুত উন্নতি লাভ করে। ১৯৭৫ সালে সরকারি অনুদান পেতে
+                                        শুরু করে এবং
+                                        ১৯৮২ সালে এমপিওভুক্ত হয়। এই সময়ে নতুন শ্রেণিকক্ষ নির্মাণ, শিক্ষক নিয়োগ এবং
+                                        আধুনিক শিক্ষা
+                                        উপকরণ সংযোজন করা হয়। ছাত্র-ছাত্রীর সংখ্যা ৫০০ এ উন্নীত হয় এবং বিজ্ঞান বিভাগ
+                                        চালু হয়।
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Modern Era -->
+                            <div class="border-l-4 border-red-500 pl-6">
+                                <div class="flex items-center mb-3">
+                                    <div
+                                        class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4">
+                                        ৪</div>
+                                    <h3 class="text-xl font-semibold text-red-700">আধুনিক যুগ (১৯৯১-বর্তমান)</h3>
+                                </div>
+                                <div class="bg-red-50 p-4 rounded-lg">
+                                    <p class="text-gray-700 leading-relaxed text-justify">
+                                        ১৯৯৫ সালে নতুন দ্বিতল ভবন নির্মাণ সম্পন্ন হয়। ২০০৫ সালে কম্পিউটার ল্যাব এবং
+                                        ২০১০ সালে
+                                        বিজ্ঞান গবেষণাগার স্থাপিত হয়। বর্তমানে প্রতিষ্ঠানটিতে ১২০০+ শিক্ষার্থী
+                                        অধ্যয়নরত এবং ৪৫ জন
+                                        অভিজ্ঞ শিক্ষক-শিক্ষিকা রয়েছেন। ২০২০ সাল থেকে ডিজিটাল ক্লাসরুম চালু হয়েছে।
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Notable Achievements -->
+                            <div class="border-l-4 border-yellow-500 pl-6">
+                                <div class="flex items-center mb-3">
+                                    <div
+                                        class="bg-yellow-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4">
+                                        ৫</div>
+                                    <h3 class="text-xl font-semibold text-yellow-700">উল্লেখযোগ্য অর্জনসমূহ</h3>
+                                </div>
+                                <div class="bg-yellow-50 p-4 rounded-lg">
+                                    <ul class="text-gray-700 space-y-2">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-medal text-yellow-600 mt-1 mr-2"></i>
+                                            <span>২০১৮ সালে জেলার সেরা শিক্ষা প্রতিষ্ঠান পুরস্কার লাভ</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-trophy text-yellow-600 mt-1 mr-2"></i>
+                                            <span>গত ১০ বছরে এসএসসি পরীক্ষায় গড়ে ৯২% পাস</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-star text-yellow-600 mt-1 mr-2"></i>
+                                            <span>৫০+ শিক্ষার্থী বিভিন্ন প্রকৌশল বিশ্ববিদ্যালয়ে ভর্তি</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-graduation-cap text-yellow-600 mt-1 mr-2"></i>
+                                            <span>১০০+ শিক্ষার্থী মেডিকেল কলেজে অধ্যয়ন</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Statistics Section -->
+                        <div class="mt-12">
+                            <h3 class="text-2xl font-semibold text-center text-gray-800 mb-6">পরিসংখ্যানে আমাদের
+                                প্রতিষ্ঠান</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                                <div class="bg-blue-100 p-6 rounded-lg text-center">
+                                    <div class="text-3xl font-bold text-blue-600 mb-2">৬৯</div>
+                                    <div class="text-blue-800 font-semibold">বছর ইতিহাস</div>
+                                </div>
+                                <div class="bg-green-100 p-6 rounded-lg text-center">
+                                    <div class="text-3xl font-bold text-green-600 mb-2">১২০০+</div>
+                                    <div class="text-green-800 font-semibold">বর্তমান শিক্ষার্থী</div>
+                                </div>
+                                <div class="bg-purple-100 p-6 rounded-lg text-center">
+                                    <div class="text-3xl font-bold text-purple-600 mb-2">৪৫</div>
+                                    <div class="text-purple-800 font-semibold">শিক্ষক-শিক্ষিকা</div>
+                                </div>
+                                <div class="bg-red-100 p-6 rounded-lg text-center">
+                                    <div class="text-3xl font-bold text-red-600 mb-2">১৫০০০+</div>
+                                    <div class="text-red-800 font-semibold">সফল ছাত্র-ছাত্রী</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vision & Mission -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Vision -->
+                    <div class="bg-white rounded-lg shadow-lg">
+                        <div class="bg-blue-600 text-white text-center py-3 rounded-t-lg">
+                            <h3 class="text-xl font-semibold">আমাদের লক্ষ্য</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-center mb-4">
+                                <i class="fas fa-eye text-blue-600 text-4xl"></i>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed text-justify">
+                                পার্বত্য চট্টগ্রামের আদিবাসী ও বাঙালি জনগোষ্ঠীর শিক্ষার মান উন্নয়ন এবং দক্ষ মানবসম্পদ
+                                তৈরি করে
+                                দেশের উন্নতিতে অবদান রাখা। আধুনিক শিক্ষা ব্যবস্থার মাধ্যমে শিক্ষার্থীদের সামগ্রিক উন্নতি
+                                সাধন।
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Mission -->
+                    <div class="bg-white rounded-lg shadow-lg">
+                        <div class="bg-green-600 text-white text-center py-3 rounded-t-lg">
+                            <h3 class="text-xl font-semibold">আমাদের ব্রত</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-center mb-4">
+                                <i class="fas fa-bullseye text-green-600 text-4xl"></i>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed text-justify">
+                                মানসম্পন্ন শিক্ষা প্রদান, নৈতিক চরিত্র গঠন, বিজ্ঞানমনস্ক দৃষ্টিভঙ্গি তৈরি এবং দেশপ্রেমিক
+                                নাগরিক
+                                হিসেবে গড়ে তোলা। সকল ধর্ম-বর্ণ নির্বিশেষে সমান সুযোগ প্রদান এবং সাংস্কৃতিক ঐতিহ্য
+                                সংরক্ষণ।
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <!-- Quick Links -->
+                <div class="bg-white rounded-lg shadow-lg mb-6">
+                    <div class="bg-gray-800 text-white text-center py-3 rounded-t-lg">
+                        <h3 class="text-lg font-semibold">দ্রুত লিংক</h3>
+                    </div>
+                    <div class="p-4">
+                        <ul class="space-y-2">
+                            <li><a href="index.html"
+                                    class="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2">
+                                    <i class="fas fa-home mr-3 text-blue-600"></i>প্রচ্ছদ</a></li>
+                            <li><a href="#"
+                                    class="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2">
+                                    <i class="fas fa-users mr-3 text-green-600"></i>পরিচালনা পর্ষদ</a></li>
+                            <li><a href="#"
+                                    class="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2">
+                                    <i class="fas fa-chalkboard-teacher mr-3 text-purple-600"></i>শিক্ষক তালিকা</a></li>
+                            <li><a href="#"
+                                    class="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2">
+                                    <i class="fas fa-trophy mr-3 text-yellow-600"></i>কৃতি শিক্ষার্থী</a></li>
+                            <li><a href="#"
+                                    class="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2">
+                                    <i class="fas fa-newspaper mr-3 text-red-600"></i>নোটিশ বোর্ড</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Historical Photos -->
+                <div class="bg-white rounded-lg shadow-lg mb-6">
+                    <div class="bg-yellow-600 text-white text-center py-3 rounded-t-lg">
+                        <h3 class="text-lg font-semibold">ঐতিহাসিক ছবি</h3>
+                    </div>
+                    <div class="p-4">
+                        <div class="space-y-4">
+                            <div>
+                                <img src="./images/2.jpeg" alt="পুরাতন ভবন" class="w-full rounded-lg shadow-md">
+                                <p class="text-xs text-gray-600 mt-1 text-center">১৯৮০ সালের স্কুল ভবন</p>
+                            </div>
+                            <div>
+                                <img src="./images/3.jpeg" alt="প্রথম ব্যাচ" class="w-full rounded-lg shadow-md">
+                                <p class="text-xs text-gray-600 mt-1 text-center">১৯৭০ সালের প্রথম এসএসসি ব্যাচ</p>
+                            </div>
+                            <div>
+                                <img src="./images/4.jpeg" alt="উদ্বোধনী অনুষ্ঠান" class="w-full rounded-lg shadow-md">
+                                <p class="text-xs text-gray-600 mt-1 text-center">নতুন ভবনের উদ্বোধন - ১৯৯৫</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="bg-white rounded-lg shadow-lg">
+                    <div class="bg-red-600 text-white text-center py-3 rounded-t-lg">
+                        <h3 class="text-lg font-semibold">যোগাযোগ</h3>
+                    </div>
+                    <div class="p-4">
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-red-600 mt-1 mr-3"></i>
+                                <span>রাঙ্গামাটি সদর, রাঙ্গামাটি</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone text-green-600 mt-1 mr-3"></i>
+                                <span>০১৩০৩২৫২৩১৭</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-blue-600 mt-1 mr-3"></i>
+                                <span>school@gmail.com</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-globe text-purple-600 mt-1 mr-3"></i>
+                                <span>স্কুল কোড: ৪৭৬০</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="px-[15px] py-[40px] bg-[url('https://jbghs.netlify.app/assets/image/footer_top_bg.png')] bg-bottom bg-no-repeat bg-contain shadow-[inset_0_0_0_2000px_rgba(255,255,255,0.77)]">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <h4 class="text-xl text-gray-800 font-semibold">খারিক্ষ্যং উচ্চ বিদ্যালয়</h4>
+                    <p>স্কুল কোডঃ ৪৭৬০ | এমপিও: ০৪১০০১১৩০১</p>
+                    <p class="mb-2 text-gray-600">প্রধান শিক্ষক: গোবিন্দ চন্দ্র দাস</p>
+                    <div class="flex space-x-4 mt-4 justify-center">
+                        <a href="#" class="text-blue-400 hover:text-blue-300"><i
+                                class="fab fa-facebook text-2xl"></i></a>
+                        <a href="mailto:ictlab114296@gmail.com" class="text-red-400 hover:text-red-300"><i
+                                class="fas fa-envelope text-2xl"></i></a>
+                        <a href="#" class="text-blue-400 hover:text-blue-300"><i
+                                class="fab fa-twitter text-2xl"></i></a>
+                        <a href="#" class="text-red-600 hover:text-red-500"><i class="fab fa-youtube text-2xl"></i></a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h5 class="font-semibold mb-2">যোগাযোগ</h5>
+                    <p class="text-gray-800">রাঙ্গামাটি সদর, রাঙ্গামাটি</p>
+                    <p class="text-gray-800">মোবাইল: ০১৩০৩২৫২৩১৷</p>
+                    <p class="text-gray-800">ইমেইল: school@gmail.com</p>
+                </div>
+                <div class="text-center">
+                    <h5 class="font-semibold mb-2 text-gray-800">প্রযুক্তি সহায়তায়</h5>
+                    <p class="text-gray-800">মুশফিকুর রহমান</p>
+                    <p class="text-gray-800">সফটওয়্যার ইঞ্জিনিয়ার</p>
+                    <p class="text-gray-800">ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটি</p>
+                    <p class="text-gray-800">হোয়াটসঅ্যাপ: <a href="https://wa.me/+8801580646908">01303252317</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Toggle desktop dropdowns
+        function toggleDropdown(id) {
+            const dropdown = document.getElementById(id);
+            dropdown.classList.toggle('hidden');
+        }
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Toggle mobile dropdowns
+        function toggleMobileDropdown(id) {
+            const dropdown = document.getElementById(id);
+            dropdown.classList.toggle('hidden');
+        }
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
