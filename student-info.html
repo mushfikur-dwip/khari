@@ -2,469 +2,508 @@
 <html lang="bn">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>শিক্ষার্থীর তথ্য - খারিক্ষ্যং উচ্চ বিদ্যালয়</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="./styles/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শিক্ষার্থীর তথ্য - খারিক্ষ্যং উচ্চ বিদ্যালয়</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body class="bg-gray-50">
-  <!-- Header -->
-  <header class="bg-white shadow-lg">
-    <!-- Top Header -->
-    <div class="bg-secondary">
-      <div class="container mx-auto px-4">
-        <div class="flex items-center justify-between py-4">
-          <div class="flex items-center space-x-4">
-            <img src="./images/logo.png" alt="স্কুল লোগো" class="h-16 w-16 rounded-full bg-white p-0.5">
-          </div>
-          <div class="text-center flex-1">
-            <h1 class="text-white text-2xl md:text-4xl font-bold">খারিক্ষ্যং উচ্চ বিদ্যালয়</h1>
-            <p class="text-white text-sm md:text-lg mt-1">রাঙ্গামাটি সদর, রাঙ্গামাটি</p>
-            <p class="text-white text-xs md:text-sm">স্কুল কোডঃ ৪৭৬০ | এমপিও: ০৪১০০১১৩০১</p>
-          </div>
-          <div class="md:hidden">
-            <button id="mobile-menu-btn" class="text-white text-2xl">
-              <i class="fas fa-bars"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="bg-main hidden md:block">
-      <div class="container mx-auto px-4">
-        <ul class="flex space-x-6 py-3 justify-center">
-          <li><a href="index.html" class="text-white hover:text-yellow-300 transition-colors">প্রচ্ছদ</a></li>
-          <li class="dropdown relative">
-            <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
-              onclick="toggleDropdown('about-dropdown')">
-              আমাদের সম্পর্কে <i class="fas fa-chevron-down ml-1 text-xs"></i>
-            </a>
-            <ul id="about-dropdown"
-              class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
-              <li><a href="history.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">প্রতিষ্ঠানের ইতিহাস</a></li>
-              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">পরিচালনা পর্ষদ</a></li>
-              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষকদের তথ্য</a></li>
-              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কর্মচারীদের তথ্য</a></li>
-              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কৃতি শিক্ষার্থী</a></li>
-            </ul>
-          </li>
-          <li class="dropdown relative">
-            <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
-              onclick="toggleDropdown('academic-dropdown')">
-              একাডেমিক তথ্য <i class="fas fa-chevron-down ml-1 text-xs"></i>
-            </a>
-            <ul id="academic-dropdown"
-              class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
-              <li><a href="student-info.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষার্থীর তথ্য</a></li>
-              <li><a href="vacant-posts.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শূণ্যপদের তালিকা</a></li>
-              <li><a href="holidays.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">ছুটির তালিকা</a></li>
-              <li><a href="class-routine.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">ক্লাস রুটিন</a></li>
-            </ul>
-          </li>
-          <li class="dropdown relative">
-            <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
-              onclick="toggleDropdown('admin-dropdown')">
-              প্রশাসনিক তথ্য <i class="fas fa-chevron-down ml-1 text-xs"></i>
-            </a>
-            <ul id="admin-dropdown"
-              class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
-              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষকদের তথ্য</a></li>
-              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কর্মচারীদের তথ্য</a></li>
-              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কৃতি শিক্ষার্থী</a></li>
-            </ul>
-          </li>
-          <li class="dropdown relative">
-            <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
-              onclick="toggleDropdown('committee-dropdown')">
-              ম্যানেজিং কমিটি <i class="fas fa-chevron-down ml-1 text-xs"></i>
-            </a>
-            <ul id="committee-dropdown"
-              class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
-              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">সভাপতি</a></li>
-              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">সদস্য</a></li>
-              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">সচিব</a></li>
-            </ul>
-          </li>
-          <li class="dropdown relative">
-            <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
-              onclick="toggleDropdown('links-dropdown')">
-              গুরুত্বপূর্ণ লিংক <i class="fas fa-chevron-down ml-1 text-xs"></i>
-            </a>
-            <ul id="links-dropdown"
-              class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
-              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">ঢাকা শিক্ষা বোর্ড</a></li>
-              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষা অধিদপ্তর</a></li>
-              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষা মন্ত্রণালয়</a></li>
-              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">এনসিটিবি</a></li>
-            </ul>
-          </li>
-          <li><a href="#" class="text-white hover:text-yellow-300 transition-colors">যোগাযোগ</a></li>
-        </ul>
-      </div>
-    </nav>
-    
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 left-0 w-64 bg-blue-800 z-50 md:hidden">
-      <div class="p-4">
-        <button id="close-menu" class="text-white text-2xl mb-4" onclick="toggleMobileMenu()">
-          <i class="fas fa-times"></i>
-        </button>
-        <ul class="space-y-3">
-          <li><a href="index.html"
-              class="block text-white py-3 px-4 border-b border-blue-700 hover:bg-blue-700 transition-colors">প্রচ্ছদ</a>
-          </li>
-          <!-- Mobile menus... (similar structure) -->
-        </ul>
-      </div>
-    </div>
-  </header>
-
-  <!-- Breadcrumb -->
-  <div class="bg-white shadow-sm border-b">
-    <div class="container mx-auto px-4 py-3">
-      <nav class="text-sm text-gray-600">
-        <a href="index.html" class="hover:text-blue-600">প্রচ্ছদ</a>
-        <span class="mx-2">/</span>
-        <a href="#" class="hover:text-blue-600">একাডেমিক তথ্য</a>
-        <span class="mx-2">/</span>
-        <span class="text-gray-800 font-medium">শিক্ষার্থীর তথ্য</span>
-      </nav>
-    </div>
-  </div>
-
-  <main class="container mx-auto px-4 py-8">
-    <!-- Page Title -->
-    <div class="text-center mb-8">
-      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">শিক্ষার্থীর তথ্য</h1>
-      <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-      <!-- Main Content -->
-      <div class="lg:col-span-3">
-        <!-- Summary Statistics -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-          <div class="bg-blue-100 p-6 rounded-lg text-center">
-            <div class="text-3xl font-bold text-blue-600 mb-2">১২৫০</div>
-            <div class="text-blue-800 font-semibold">মোট শিক্ষার্থী</div>
-          </div>
-          <div class="bg-green-100 p-6 rounded-lg text-center">
-            <div class="text-3xl font-bold text-green-600 mb-2">৬৫০</div>
-            <div class="text-green-800 font-semibold">ছাত্র</div>
-          </div>
-          <div class="bg-pink-100 p-6 rounded-lg text-center">
-            <div class="text-3xl font-bold text-pink-600 mb-2">৬০০</div>
-            <div class="text-pink-800 font-semibold">ছাত্রী</div>
-          </div>
-          <div class="bg-purple-100 p-6 rounded-lg text-center">
-            <div class="text-3xl font-bold text-purple-600 mb-2">৫</div>
-            <div class="text-purple-800 font-semibold">শ্রেণি</div>
-          </div>
-        </div>
-
-        <!-- Class-wise Student Information -->
-        <div class="bg-white rounded-lg shadow-lg">
-          <div class="bg-gradient-to-r from-blue-600 to-green-600 text-white text-center py-4 rounded-t-lg">
-            <h2 class="text-2xl font-semibold">শ্রেণিভিত্তিক শিক্ষার্থীর তথ্য</h2>
-          </div>
-          
-          <div class="p-6">
-            <div class="overflow-x-auto">
-              <table class="w-full border-collapse border border-gray-300">
-                <thead>
-                  <tr class="bg-gray-100">
-                    <th class="border border-gray-300 px-4 py-3 text-left font-semibold">শ্রেণি</th>
-                    <th class="border border-gray-300 px-4 py-3 text-center font-semibold">শাখা</th>
-                    <th class="border border-gray-300 px-4 py-3 text-center font-semibold">ছাত্র</th>
-                    <th class="border border-gray-300 px-4 py-3 text-center font-semibold">ছাত্রী</th>
-                    <th class="border border-gray-300 px-4 py-3 text-center font-semibold">মোট</th>
-                    <th class="border border-gray-300 px-4 py-3 text-center font-semibold">শ্রেণি শিক্ষক</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- Class 6 -->
-                  <tr class="hover:bg-blue-50">
-                    <td class="border border-gray-300 px-4 py-3 font-medium text-blue-700" rowspan="2">ষষ্ঠ শ্রেণি</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">ক</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৩৮</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৩৫</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center font-semibold">৭৩</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">মোহাম্মদ রহিম উদ্দিন</td>
-                  </tr>
-                  <tr class="hover:bg-blue-50">
-                    <td class="border border-gray-300 px-4 py-3 text-center">খ</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৪০</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৩২</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center font-semibold">৭২</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">ফাতেমা খাতুন</td>
-                  </tr>
-                  
-                  <!-- Class 7 -->
-                  <tr class="hover:bg-green-50">
-                    <td class="border border-gray-300 px-4 py-3 font-medium text-green-700" rowspan="2">সপ্তম শ্রেণি</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">ক</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৪২</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৩৮</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center font-semibold">৮০</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">আব্দুল করিম</td>
-                  </tr>
-                  <tr class="hover:bg-green-50">
-                    <td class="border border-gray-300 px-4 py-3 text-center">খ</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৩৯</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৪১</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center font-semibold">৮০</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">রোকেয়া বেগম</td>
-                  </tr>
-
-                  <!-- Class 8 -->
-                  <tr class="hover:bg-purple-50">
-                    <td class="border border-gray-300 px-4 py-3 font-medium text-purple-700" rowspan="2">অষ্টম শ্রেণি</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">ক</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৪৫</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৪০</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center font-semibold">৮৫</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">নূরুল ইসলাম</td>
-                  </tr>
-                  <tr class="hover:bg-purple-50">
-                    <td class="border border-gray-300 px-4 py-3 text-center">খ</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৪৩</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৪২</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center font-semibold">৮৫</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">সালমা আক্তার</td>
-                  </tr>
-
-                  <!-- Class 9 -->
-                  <tr class="hover:bg-yellow-50">
-                    <td class="border border-gray-300 px-4 py-3 font-medium text-yellow-700" rowspan="3">নবম শ্রেণি</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">বিজ্ঞান</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৮৫</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৭০</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center font-semibold">১৫৫</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">আনিসুর রহমান</td>
-                  </tr>
-                  <tr class="hover:bg-yellow-50">
-                    <td class="border border-gray-300 px-4 py-3 text-center">মানবিক</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৪৮</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৫২</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center font-semibold">১০০</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">শাহনাজ পারভীন</td>
-                  </tr>
-                  <tr class="hover:bg-yellow-50">
-                    <td class="border border-gray-300 px-4 py-3 text-center">ব্যবসায় শিক্ষা</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৩৫</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৪৫</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center font-semibold">৮০</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">মুজিবুর রহমান</td>
-                  </tr>
-
-                  <!-- Class 10 -->
-                  <tr class="hover:bg-red-50">
-                    <td class="border border-gray-300 px-4 py-3 font-medium text-red-700" rowspan="3">দশম শ্রেণি</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">বিজ্ঞান</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৮০</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৬৫</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center font-semibold">১৪৫</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">হাসিবুল হাসান</td>
-                  </tr>
-                  <tr class="hover:bg-red-50">
-                    <td class="border border-gray-300 px-4 py-3 text-center">মানবিক</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৪৫</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৫০</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center font-semibold">৯৫</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">তাসলিমা আক্তার</td>
-                  </tr>
-                  <tr class="hover:bg-red-50">
-                    <td class="border border-gray-300 px-4 py-3 text-center">ব্যবসায় শিক্ষা</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৩২</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৪৮</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center font-semibold">৮০</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">জাকির হোসেন</td>
-                  </tr>
-
-                  <!-- Total -->
-                  <tr class="bg-gray-200 font-bold">
-                    <td class="border border-gray-300 px-4 py-3" colspan="2">সর্বমোট</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৬৫০</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">৬০০</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center text-lg">১২৫০</td>
-                    <td class="border border-gray-300 px-4 py-3 text-center">-</td>
-                  </tr>
-                </tbody>
-              </table>
+    <!-- Header -->
+    <header class="bg-white shadow-lg">
+        <!-- Top Header -->
+        <div class="bg-secondary">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between py-4">
+                    <div class="flex items-center space-x-4">
+                        <img src="./images/logo.png" alt="স্কুল লোগো" class="h-16 w-16 rounded-full bg-white p-0.5">
+                    </div>
+                    <div class="text-center flex-1">
+                        <h1 class="text-white text-2xl md:text-4xl font-bold">খারিক্ষ্যং উচ্চ বিদ্যালয়</h1>
+                        <p class="text-white text-sm md:text-lg mt-1">রাঙ্গামাটি সদর, রাঙ্গামাটি</p>
+                        <p class="text-white text-xs md:text-sm">স্কুল কোডঃ ৪৭৬০ | এমপিও: ০৪১০০১১৩০১</p>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="mobile-menu-btn" class="text-white text-2xl">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
 
-        <!-- Academic Year Information -->
-        <div class="mt-8 bg-white rounded-lg shadow-lg">
-          <div class="bg-gradient-to-r from-green-600 to-blue-600 text-white text-center py-3 rounded-t-lg">
-            <h3 class="text-xl font-semibold">শিক্ষাবর্ষ ২০২৫ এর তথ্য</h3>
-          </div>
-          <div class="p-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h4 class="text-lg font-semibold text-gray-700 mb-3">গুরুত্বপূর্ণ তথ্য</h4>
-                <ul class="space-y-2 text-gray-600">
-                  <li class="flex items-center"><i class="fas fa-calendar-alt text-blue-600 mr-2"></i> শিক্ষাবর্ষ: ২০২৫</li>
-                  <li class="flex items-center"><i class="fas fa-users text-green-600 mr-2"></i> নতুন ভর্তি: ৩২০ জন</li>
-                  <li class="flex items-center"><i class="fas fa-graduation-cap text-purple-600 mr-2"></i> এসএসসি পরীক্ষার্থী: ৩২০ জন</li>
-                  <li class="flex items-center"><i class="fas fa-trophy text-yellow-600 mr-2"></i> বৃত্তিপ্রাপ্ত: ৪৮ জন</li>
+        <!-- Navigation -->
+        <nav class="bg-main hidden md:block">
+            <div class="container mx-auto px-4">
+                <ul class="flex space-x-6 py-3 justify-center">
+                    <li><a href="index.html" class="text-white hover:text-yellow-300 transition-colors">প্রচ্ছদ</a></li>
+                    <li class="dropdown relative">
+                        <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+                            onclick="toggleDropdown('about-dropdown')">
+                            আমাদের সম্পর্কে <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul id="about-dropdown"
+                            class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+                            <li><a href="history.html"
+                                    class="block px-4 py-2 text-gray-800 hover:bg-blue-50">প্রতিষ্ঠানের ইতিহাস</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">পরিচালনা পর্ষদ</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষকদের তথ্য</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কর্মচারীদের তথ্য</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কৃতি শিক্ষার্থী</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown relative">
+                        <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+                            onclick="toggleDropdown('academic-dropdown')">
+                            একাডেমিক তথ্য <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul id="academic-dropdown"
+                            class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+                            <li><a href="student-info.html"
+                                    class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষার্থীর তথ্য</a></li>
+                            <li><a href="vacant-posts.html"
+                                    class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শূণ্যপদের তালিকা</a></li>
+                            <li><a href="holidays.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">ছুটির
+                                    তালিকা</a></li>
+                            <li><a href="class-routine.html"
+                                    class="block px-4 py-2 text-gray-800 hover:bg-blue-50">ক্লাস রুটিন</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown relative">
+                        <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+                            onclick="toggleDropdown('admin-dropdown')">
+                            প্রশাসনিক তথ্য <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul id="admin-dropdown"
+                            class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষকদের তথ্য</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কর্মচারীদের তথ্য</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কৃতি শিক্ষার্থী</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown relative">
+                        <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+                            onclick="toggleDropdown('committee-dropdown')">
+                            ম্যানেজিং কমিটি <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul id="committee-dropdown"
+                            class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">সভাপতি</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">সদস্য</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">সচিব</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown relative">
+                        <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+                            onclick="toggleDropdown('links-dropdown')">
+                            গুরুত্বপূর্ণ লিংক <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul id="links-dropdown"
+                            class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">ঢাকা শিক্ষা বোর্ড</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষা অধিদপ্তর</a>
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষা
+                                    মন্ত্রণালয়</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">এনসিটিবি</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="text-white hover:text-yellow-300 transition-colors">যোগাযোগ</a></li>
                 </ul>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold text-gray-700 mb-3">বিশেষ সুবিধা</h4>
-                <ul class="space-y-2 text-gray-600">
-                  <li class="flex items-center"><i class="fas fa-book text-red-600 mr-2"></i> বিনামূল্যে পাঠ্যবই</li>
-                  <li class="flex items-center"><i class="fas fa-utensils text-orange-600 mr-2"></i> মিড-ডে মিল প্রোগ্রাম</li>
-                  <li class="flex items-center"><i class="fas fa-laptop text-cyan-600 mr-2"></i> ডিজিটাল ক্লাসরুম</li>
-                  <li class="flex items-center"><i class="fas fa-medkit text-pink-600 mr-2"></i> স্বাস্থ্য পরীক্ষা</li>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed inset-y-0 left-0 w-64 bg-blue-800 z-50 md:hidden">
+            <div class="p-4">
+                <button id="close-menu" class="text-white text-2xl mb-4" onclick="toggleMobileMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul class="space-y-3">
+                    <li><a href="index.html"
+                            class="block text-white py-3 px-4 border-b border-blue-700 hover:bg-blue-700 transition-colors">প্রচ্ছদ</a>
+                    </li>
+                    <!-- Mobile menus... (similar structure) -->
                 </ul>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
+    </header>
 
-      <!-- Sidebar -->
-      <div class="lg:col-span-1">
-        <!-- Quick Links -->
-        <div class="bg-white rounded-lg shadow-lg mb-6">
-          <div class="bg-gray-800 text-white text-center py-3 rounded-t-lg">
-            <h3 class="text-lg font-semibold">দ্রুত লিংক</h3>
-          </div>
-          <div class="p-4">
-            <ul class="space-y-2">
-              <li><a href="vacant-posts.html" class="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2">
-                <i class="fas fa-list mr-3 text-blue-600"></i>শূণ্যপদের তালিকা</a></li>
-              <li><a href="holidays.html" class="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2">
-                <i class="fas fa-calendar mr-3 text-green-600"></i>ছুটির তালিকা</a></li>
-              <li><a href="class-routine.html" class="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2">
-                <i class="fas fa-clock mr-3 text-purple-600"></i>ক্লাস রুটিন</a></li>
-              <li><a href="#" class="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2">
-                <i class="fas fa-chart-bar mr-3 text-yellow-600"></i>পরীক্ষার ফলাফল</a></li>
-            </ul>
-          </div>
+    <!-- Breadcrumb -->
+    <!-- <div class="bg-white shadow-sm border-b">
+        <div class="container mx-auto px-4 py-3">
+            <nav class="text-sm text-gray-600">
+                <a href="index.html" class="hover:text-blue-600">প্রচ্ছদ</a>
+                <span class="mx-2">/</span>
+                <a href="#" class="hover:text-blue-600">একাডেমিক তথ্য</a>
+                <span class="mx-2">/</span>
+                <span class="text-gray-800 font-medium">শিক্ষার্থীর তথ্য</span>
+            </nav>
+        </div>
+    </div> -->
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Page Title -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">শিক্ষার্থীর তথ্য</h1>
+            <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
         </div>
 
-        <!-- Admission Info -->
-        <div class="bg-white rounded-lg shadow-lg mb-6">
-          <div class="bg-green-600 text-white text-center py-3 rounded-t-lg">
-            <h3 class="text-lg font-semibold">ভর্তি তথ্য</h3>
-          </div>
-          <div class="p-4 text-center">
-            <div class="mb-4">
-              <div class="text-2xl font-bold text-green-600">২০২৬</div>
-              <div class="text-gray-600">শিক্ষাবর্ষে ভর্তি</div>
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-3">
+                <!-- Summary Statistics -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+                    <div class="bg-blue-100 p-6 rounded-lg text-center">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">১২৫০</div>
+                        <div class="text-blue-800 font-semibold">মোট শিক্ষার্থী</div>
+                    </div>
+                    <div class="bg-green-100 p-6 rounded-lg text-center">
+                        <div class="text-3xl font-bold text-green-600 mb-2">৬৫০</div>
+                        <div class="text-green-800 font-semibold">ছাত্র</div>
+                    </div>
+                    <div class="bg-pink-100 p-6 rounded-lg text-center">
+                        <div class="text-3xl font-bold text-pink-600 mb-2">৬০০</div>
+                        <div class="text-pink-800 font-semibold">ছাত্রী</div>
+                    </div>
+                    <div class="bg-purple-100 p-6 rounded-lg text-center">
+                        <div class="text-3xl font-bold text-purple-600 mb-2">৫</div>
+                        <div class="text-purple-800 font-semibold">শ্রেণি</div>
+                    </div>
+                </div>
+
+                <!-- Class-wise Student Information -->
+                <div class="bg-white rounded-lg shadow-lg">
+                    <div class="bg-gradient-to-r from-blue-600 to-green-600 text-white text-center py-4 rounded-t-lg">
+                        <h2 class="text-2xl font-semibold">শ্রেণিভিত্তিক শিক্ষার্থীর তথ্য</h2>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="overflow-x-auto">
+                            <table class="w-full border-collapse border border-gray-300">
+                                <thead>
+                                    <tr class="bg-gray-100">
+                                        <th class="border border-gray-300 px-4 py-3 text-left font-semibold">শ্রেণি</th>
+                                        <th class="border border-gray-300 px-4 py-3 text-center font-semibold">শাখা</th>
+                                        <th class="border border-gray-300 px-4 py-3 text-center font-semibold">ছাত্র
+                                        </th>
+                                        <th class="border border-gray-300 px-4 py-3 text-center font-semibold">ছাত্রী
+                                        </th>
+                                        <th class="border border-gray-300 px-4 py-3 text-center font-semibold">মোট</th>
+                                        <th class="border border-gray-300 px-4 py-3 text-center font-semibold">শ্রেণি
+                                            শিক্ষক</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Class 6 -->
+                                    <tr class="hover:bg-blue-50">
+                                        <td class="border border-gray-300 px-4 py-3 font-medium text-blue-700"
+                                            rowspan="2">ষষ্ঠ শ্রেণি</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">ক</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৩৮</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৩৫</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center font-semibold">৭৩</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">মোহাম্মদ রহিম উদ্দিন
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50">
+                                        <td class="border border-gray-300 px-4 py-3 text-center">খ</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৪০</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৩২</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center font-semibold">৭২</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">ফাতেমা খাতুন</td>
+                                    </tr>
+
+                                    <!-- Class 7 -->
+                                    <tr class="hover:bg-green-50">
+                                        <td class="border border-gray-300 px-4 py-3 font-medium text-green-700"
+                                            rowspan="2">সপ্তম শ্রেণি</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">ক</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৪২</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৩৮</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center font-semibold">৮০</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">আব্দুল করিম</td>
+                                    </tr>
+                                    <tr class="hover:bg-green-50">
+                                        <td class="border border-gray-300 px-4 py-3 text-center">খ</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৩৯</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৪১</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center font-semibold">৮০</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">রোকেয়া বেগম</td>
+                                    </tr>
+
+                                    <!-- Class 8 -->
+                                    <tr class="hover:bg-purple-50">
+                                        <td class="border border-gray-300 px-4 py-3 font-medium text-purple-700"
+                                            rowspan="2">অষ্টম শ্রেণি</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">ক</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৪৫</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৪০</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center font-semibold">৮৫</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">নূরুল ইসলাম</td>
+                                    </tr>
+                                    <tr class="hover:bg-purple-50">
+                                        <td class="border border-gray-300 px-4 py-3 text-center">খ</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৪৩</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৪২</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center font-semibold">৮৫</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">সালমা আক্তার</td>
+                                    </tr>
+
+                                    <!-- Class 9 -->
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="border border-gray-300 px-4 py-3 font-medium text-yellow-700"
+                                            rowspan="3">নবম শ্রেণি</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">বিজ্ঞান</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৮৫</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৭০</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center font-semibold">১৫৫</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">আনিসুর রহমান</td>
+                                    </tr>
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="border border-gray-300 px-4 py-3 text-center">মানবিক</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৪৮</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৫২</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center font-semibold">১০০</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">শাহনাজ পারভীন</td>
+                                    </tr>
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="border border-gray-300 px-4 py-3 text-center">ব্যবসায় শিক্ষা</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৩৫</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৪৫</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center font-semibold">৮০</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">মুজিবুর রহমান</td>
+                                    </tr>
+
+                                    <!-- Class 10 -->
+                                    <tr class="hover:bg-red-50">
+                                        <td class="border border-gray-300 px-4 py-3 font-medium text-red-700"
+                                            rowspan="3">দশম শ্রেণি</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">বিজ্ঞান</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৮০</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৬৫</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center font-semibold">১৪৫</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">হাসিবুল হাসান</td>
+                                    </tr>
+                                    <tr class="hover:bg-red-50">
+                                        <td class="border border-gray-300 px-4 py-3 text-center">মানবিক</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৪৫</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৫০</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center font-semibold">৯৫</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">তাসলিমা আক্তার</td>
+                                    </tr>
+                                    <tr class="hover:bg-red-50">
+                                        <td class="border border-gray-300 px-4 py-3 text-center">ব্যবসায় শিক্ষা</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৩২</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৪৮</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center font-semibold">৮০</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">জাকির হোসেন</td>
+                                    </tr>
+
+                                    <!-- Total -->
+                                    <tr class="bg-gray-200 font-bold">
+                                        <td class="border border-gray-300 px-4 py-3" colspan="2">সর্বমোট</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৬৫০</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">৬০০</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center text-lg">১২৫০</td>
+                                        <td class="border border-gray-300 px-4 py-3 text-center">-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic Year Information -->
+                <div class="mt-8 bg-white rounded-lg shadow-lg">
+                    <div class="bg-gradient-to-r from-green-600 to-blue-600 text-white text-center py-3 rounded-t-lg">
+                        <h3 class="text-xl font-semibold">শিক্ষাবর্ষ ২০২৫ এর তথ্য</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-700 mb-3">গুরুত্বপূর্ণ তথ্য</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-center"><i class="fas fa-calendar-alt text-blue-600 mr-2"></i>
+                                        শিক্ষাবর্ষ: ২০২৫</li>
+                                    <li class="flex items-center"><i class="fas fa-users text-green-600 mr-2"></i> নতুন
+                                        ভর্তি: ৩২০ জন</li>
+                                    <li class="flex items-center"><i
+                                            class="fas fa-graduation-cap text-purple-600 mr-2"></i> এসএসসি পরীক্ষার্থী:
+                                        ৩২০ জন</li>
+                                    <li class="flex items-center"><i class="fas fa-trophy text-yellow-600 mr-2"></i>
+                                        বৃত্তিপ্রাপ্ত: ৪৮ জন</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-700 mb-3">বিশেষ সুবিধা</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-center"><i class="fas fa-book text-red-600 mr-2"></i>
+                                        বিনামূল্যে পাঠ্যবই</li>
+                                    <li class="flex items-center"><i class="fas fa-utensils text-orange-600 mr-2"></i>
+                                        মিড-ডে মিল প্রোগ্রাম</li>
+                                    <li class="flex items-center"><i class="fas fa-laptop text-cyan-600 mr-2"></i>
+                                        ডিজিটাল ক্লাসরুম</li>
+                                    <li class="flex items-center"><i class="fas fa-medkit text-pink-600 mr-2"></i>
+                                        স্বাস্থ্য পরীক্ষা</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="space-y-2 text-sm text-gray-600">
-              <p><strong>আবেদনের সময়:</strong> ডিসেম্বর ২০২৫</p>
-              <p><strong>পরীক্ষার তারিখ:</strong> জানুয়ারি ২০২৬</p>
-              <p><strong>ফলাফল প্রকাশ:</strong> ফেব্রুয়ারি ২০২৬</p>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <!-- Quick Links -->
+                <div class="bg-white rounded-lg shadow-lg mb-6">
+                    <div class="bg-gray-800 text-white text-center py-3 rounded-t-lg">
+                        <h3 class="text-lg font-semibold">দ্রুত লিংক</h3>
+                    </div>
+                    <div class="p-4">
+                        <ul class="space-y-2">
+                            <li><a href="vacant-posts.html"
+                                    class="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2">
+                                    <i class="fas fa-list mr-3 text-blue-600"></i>শূণ্যপদের তালিকা</a></li>
+                            <li><a href="holidays.html"
+                                    class="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2">
+                                    <i class="fas fa-calendar mr-3 text-green-600"></i>ছুটির তালিকা</a></li>
+                            <li><a href="class-routine.html"
+                                    class="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2">
+                                    <i class="fas fa-clock mr-3 text-purple-600"></i>ক্লাস রুটিন</a></li>
+                            <li><a href="#"
+                                    class="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2">
+                                    <i class="fas fa-chart-bar mr-3 text-yellow-600"></i>পরীক্ষার ফলাফল</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Admission Info -->
+                <div class="bg-white rounded-lg shadow-lg mb-6">
+                    <div class="bg-green-600 text-white text-center py-3 rounded-t-lg">
+                        <h3 class="text-lg font-semibold">ভর্তি তথ্য</h3>
+                    </div>
+                    <div class="p-4 text-center">
+                        <div class="mb-4">
+                            <div class="text-2xl font-bold text-green-600">২০২৬</div>
+                            <div class="text-gray-600">শিক্ষাবর্ষে ভর্তি</div>
+                        </div>
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <p><strong>আবেদনের সময়:</strong> ডিসেম্বর ২০২৫</p>
+                            <p><strong>পরীক্ষার তারিখ:</strong> জানুয়ারি ২০২৬</p>
+                            <p><strong>ফলাফল প্রকাশ:</strong> ফেব্রুয়ারি ২০২৬</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="bg-white rounded-lg shadow-lg">
+                    <div class="bg-blue-600 text-white text-center py-3 rounded-t-lg">
+                        <h3 class="text-lg font-semibold">যোগাযোগ</h3>
+                    </div>
+                    <div class="p-4">
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start">
+                                <i class="fas fa-phone text-green-600 mt-1 mr-3"></i>
+                                <span>০১৩০৩২৫২৩১৭</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-blue-600 mt-1 mr-3"></i>
+                                <span>school@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
+    </main>
 
-        <!-- Contact -->
-        <div class="bg-white rounded-lg shadow-lg">
-          <div class="bg-blue-600 text-white text-center py-3 rounded-t-lg">
-            <h3 class="text-lg font-semibold">যোগাযোগ</h3>
-          </div>
-          <div class="p-4">
-            <div class="space-y-3 text-sm">
-              <div class="flex items-start">
-                <i class="fas fa-phone text-green-600 mt-1 mr-3"></i>
-                <span>০১৩০৩২৫২৩১৭</span>
-              </div>
-              <div class="flex items-start">
-                <i class="fas fa-envelope text-blue-600 mt-1 mr-3"></i>
-                <span>school@gmail.com</span>
-              </div>
+    <!-- Footer -->
+    <footer
+        class="px-[15px] py-[40px] bg-[url('https://jbghs.netlify.app/assets/image/footer_top_bg.png')] bg-bottom bg-no-repeat bg-contain shadow-[inset_0_0_0_2000px_rgba(255,255,255,0.77)]">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <h4 class="text-xl text-gray-800 font-semibold">খারিক্ষ্যং উচ্চ বিদ্যালয়</h4>
+                    <p>স্কুল কোডঃ ৪৭৬০ | এমপিও: ০৪১০০১১৩০১</p>
+                    <p class="mb-2 text-gray-600">প্রধান শিক্ষক: গোবিন্দ চন্দ্র দাস</p>
+                    <div class="flex space-x-4 mt-4 justify-center">
+                        <a href="#" class="text-blue-400 hover:text-blue-300"><i
+                                class="fab fa-facebook text-2xl"></i></a>
+                        <a href="mailto:ictlab114296@gmail.com" class="text-red-400 hover:text-red-300"><i
+                                class="fas fa-envelope text-2xl"></i></a>
+                        <a href="#" class="text-blue-400 hover:text-blue-300"><i
+                                class="fab fa-twitter text-2xl"></i></a>
+                        <a href="#" class="text-red-600 hover:text-red-500"><i class="fab fa-youtube text-2xl"></i></a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h5 class="font-semibold mb-2">যোগাযোগ</h5>
+                    <p class="text-gray-800">রাঙ্গামাটি সদর, রাঙ্গামাটি</p>
+                    <p class="text-gray-800">মোবাইল: ০১৩০৩২৫২৩১৭</p>
+                    <p class="text-gray-800">ইমেইল: school@gmail.com</p>
+                </div>
+                <div class="text-center">
+                    <h5 class="font-semibold mb-2 text-gray-800">প্রযুক্তি সহায়তায়</h5>
+                    <p class="text-gray-800">মুশফিকুর রহমান</p>
+                    <p class="text-gray-800">সফটওয়্যার ইঞ্জিনিয়ার</p>
+                    <p class="text-gray-800">ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটি</p>
+                    <p class="text-gray-800">হোয়াটসঅ্যাপ: <a href="https://wa.me/+8801580646908">01303252317</a></p>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </main>
+    </footer>
 
-  <!-- Footer -->
-  <footer
-    class="px-[15px] py-[40px] bg-[url('https://jbghs.netlify.app/assets/image/footer_top_bg.png')] bg-bottom bg-no-repeat bg-contain shadow-[inset_0_0_0_2000px_rgba(255,255,255,0.77)]">
-    <div class="container mx-auto px-4 py-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="text-center">
-          <h4 class="text-xl text-gray-800 font-semibold">খারিক্ষ্যং উচ্চ বিদ্যালয়</h4>
-          <p>স্কুল কোডঃ ৪৭৬০ | এমপিও: ০৪১০০১১৩০১</p>
-          <p class="mb-2 text-gray-600">প্রধান শিক্ষক: গোবিন্দ চন্দ্র দাস</p>
-          <div class="flex space-x-4 mt-4 justify-center">
-            <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fab fa-facebook text-2xl"></i></a>
-            <a href="mailto:ictlab114296@gmail.com" class="text-red-400 hover:text-red-300"><i
-                class="fas fa-envelope text-2xl"></i></a>
-            <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fab fa-twitter text-2xl"></i></a>
-            <a href="#" class="text-red-600 hover:text-red-500"><i class="fab fa-youtube text-2xl"></i></a>
-          </div>
-        </div>
-        <div class="text-center">
-          <h5 class="font-semibold mb-2">যোগাযোগ</h5>
-          <p class="text-gray-800">রাঙ্গামাটি সদর, রাঙ্গামাটি</p>
-          <p class="text-gray-800">মোবাইল: ০১৩০৩২৫২৩১৭</p>
-          <p class="text-gray-800">ইমেইল: school@gmail.com</p>
-        </div>
-        <div class="text-center">
-          <h5 class="font-semibold mb-2 text-gray-800">প্রযুক্তি সহায়তায়</h5>
-          <p class="text-gray-800">মুশফিকুর রহমান</p>
-          <p class="text-gray-800">সফটওয়্যার ইঞ্জিনিয়ার</p>
-          <p class="text-gray-800">ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটি</p>
-          <p class="text-gray-800">হোয়াটসঅ্যাপ: <a href="https://wa.me/+8801580646908">01303252317</a></p>
-        </div>
-      </div>
-    </div>
-  </footer>
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
 
-  <script>
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const closeMenu = document.getElementById('close-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
 
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.add('active');
-    });
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
 
-    closeMenu.addEventListener('click', () => {
-      mobileMenu.classList.remove('active');
-    });
+        // Toggle desktop dropdowns
+        function toggleDropdown(id) {
+            const dropdown = document.getElementById(id);
+            dropdown.classList.toggle('hidden');
+        }
 
-    // Toggle desktop dropdowns
-    function toggleDropdown(id) {
-      const dropdown = document.getElementById(id);
-      dropdown.classList.toggle('hidden');
-    }
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
 
-    // Toggle mobile menu
-    function toggleMobileMenu() {
-      const mobileMenu = document.getElementById('mobile-menu');
-      mobileMenu.classList.toggle('hidden');
-    }
+        // Toggle mobile dropdowns
+        function toggleMobileDropdown(id) {
+            const dropdown = document.getElementById(id);
+            dropdown.classList.toggle('hidden');
+        }
 
-    // Toggle mobile dropdowns
-    function toggleMobileDropdown(id) {
-      const dropdown = document.getElementById(id);
-      dropdown.classList.toggle('hidden');
-    }
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-        mobileMenu.classList.remove('active');
-      }
-    });
-  </script>
-  <script src="js/app.js"></script>
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
