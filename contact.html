@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>যোগাযোগ - খারিক্ষ্যং উচ্চ বিদ্যালয়</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50">
+  <!-- Header -->
+  <header class="bg-white shadow-lg">
+    <!-- Top Header -->
+    <div class="bg-secondary">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-4">
+          <div class="flex items-center space-x-4">
+            <img src="./images/logo.png" alt="স্কুল লোগো" class="h-16 w-16 rounded-full bg-white p-0.5">
+          </div>
+          <div class="text-center flex-1">
+            <h1 class="text-white text-2xl md:text-4xl font-bold">খারিক্ষ্যং উচ্চ বিদ্যালয়</h1>
+            <p class="text-white text-sm md:text-lg mt-1">রাঙ্গামাটি সদর, রাঙ্গামাটি</p>
+            <p class="text-white text-xs md:text-sm">স্কুল কোডঃ ৪৭৬০ | এমপিও: ০৪১০০১১৩০১</p>
+          </div>
+          <div class="md:hidden">
+            <button id="mobile-menu-btn" class="text-white text-2xl">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-main hidden md:block">
+      <div class="container mx-auto px-4">
+        <ul class="flex space-x-6 py-3 justify-center">
+          <li><a href="index.html" class="text-white hover:text-yellow-300 transition-colors">প্রচ্ছদ</a></li>
+          <li class="dropdown relative">
+            <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+              onclick="toggleDropdown('about-dropdown')">
+              আমাদের সম্পর্কে <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </a>
+            <ul id="about-dropdown"
+              class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+              <li><a href="history.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">প্রতিষ্ঠানের ইতিহাস</a></li>
+              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">পরিচালনা পর্ষদ</a></li>
+              <li><a href="teacher-info.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষকদের তথ্য</a></li>
+              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কর্মচারীদের তথ্য</a></li>
+              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কৃতি শিক্ষার্থী</a></li>
+            </ul>
+          </li>
+          <li class="dropdown relative">
+            <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+              onclick="toggleDropdown('academic-dropdown')">
+              একাডেমিক তথ্য <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </a>
+            <ul id="academic-dropdown"
+              class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+              <li><a href="student-info.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষার্থীর তথ্য</a></li>
+              <li><a href="vacant-posts.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শূণ্যপদের তালিকা</a></li>
+              <li><a href="holidays.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">ছুটির তালিকা</a></li>
+              <li><a href="class-routine.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">ক্লাস রুটিন</a></li>
+            </ul>
+          </li>
+          <li class="dropdown relative">
+            <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+              onclick="toggleDropdown('admin-dropdown')">
+              প্রশাসনিক তথ্য <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </a>
+            <ul id="admin-dropdown"
+              class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+              <li><a href="teacher-info.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষকদের তথ্য</a></li>
+              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কর্মচারীদের তথ্য</a></li>
+              <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">কৃতি শিক্ষার্থী</a></li>
+            </ul>
+          </li>
+          <li class="dropdown relative">
+            <a href="#" class="text-white hover:text-yellow-300 transition-colors flex items-center"
+              onclick="toggleDropdown('links-dropdown')">
+              গুরুত্বপূর্ণ লিংক <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </a>
+            <ul id="links-dropdown"
+              class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-48 hidden z-50">
+              <li><a href="https://bise-ctg.portal.gov.bd/" target="_blank" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">চট্টগ্রাম শিক্ষা বোর্ড</a></li>
+              <li><a href="https://dshe.gov.bd/" target="_blank" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষা অধিদপ্তর</a></li>
+              <li><a href="https://shed.gov.bd/" target="_blank" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">শিক্ষা মন্ত্রণালয়</a></li>
+              <li><a href="https://nctb.portal.gov.bd/site/page/52ce556f-6fbe-429a-8211-2704050f115e" target="_blank" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">এনসিটিবি</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html" class="text-white hover:text-yellow-300 transition-colors">যোগাযোগ</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 left-0 w-64 bg-blue-800 z-50 md:hidden">
+      <div class="p-4">
+        <button id="close-menu" class="text-white text-2xl mb-4" onclick="toggleMobileMenu()">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul class="space-y-3">
+          <li><a href="index.html"
+              class="block text-white py-3 px-4 border-b border-blue-700 hover:bg-blue-700 transition-colors">প্রচ্ছদ</a>
+          </li>
+          <!-- Mobile menus... -->
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white shadow-sm border-b">
+    <div class="container mx-auto px-4 py-3">
+      <nav class="text-sm text-gray-600">
+        <a href="index.html" class="hover:text-blue-600">প্রচ্ছদ</a>
+        <span class="mx-2">/</span>
+        <span class="text-gray-800 font-medium">যোগাযোগ</span>
+      </nav>
+    </div>
+  </div>
+
+  <main class="container mx-auto px-4 py-8">
+    <!-- Page Title -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">যোগাযোগ</h1>
+      <div class="w-24 h-1 bg-green-600 mx-auto rounded-full"></div>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">আমাদের সাথে যোগাযোগ করুন। আমরা আপনার সকল প্রশ্ন ও মতামতের উত্তর দিতে প্রস্তুত।</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Contact Information -->
+      <div class="lg:col-span-2">
+        <!-- Contact Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <!-- Address -->
+          <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-map-marker-alt text-red-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">আমাদের ঠিকানা</h3>
+            <p class="text-gray-600 leading-relaxed">
+              খারিক্ষ্যং উচ্চ বিদ্যালয়<br>
+              রাঙ্গামাটি সদর<br>
+              রাঙ্গামাটি পার্বত্য জেলা<br>
+              বাংলাদেশ - ৪৫০০
+            </p>
+          </div>
+
+          <!-- Phone -->
+          <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-phone text-green-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">ফোন নম্বর</h3>
+            <p class="text-gray-600">
+              <strong>অফিস:</strong> ০৩৫১-৬৫৪৩২<br>
+              <strong>প্রধান শিক্ষক:</strong> ০১৮১২৩৪৫৬৭৮<br>
+              <strong>অফিস সহায়ক:</strong> ০১৩০৩২৫২৩১৭
+            </p>
+          </div>
+
+          <!-- Email -->
+          <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-envelope text-blue-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">ইমেইল</h3>
+            <p class="text-gray-600">
+              <strong>অফিসিয়াল:</strong><br>
+              <a href="mailto:school@gmail.com" class="text-blue-600 hover:underline">school@gmail.com</a><br>
+              <strong>প্রযুক্তি সহায়তা:</strong><br>
+              <a href="mailto:ictlab114296@gmail.com" class="text-blue-600 hover:underline">ictlab114296@gmail.com</a>
+            </p>
+          </div>
+
+          <!-- Office Hours -->
+          <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-clock text-purple-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">অফিস সময়</h3>
+            <p class="text-gray-600">
+              <strong>রবিবার - বৃহস্পতিবার:</strong><br>
+              সকাল ৮:০০ - বিকাল ৫:০০<br>
+              <strong>শুক্রবার:</strong><br>
+              সকাল ৮:০০ - দুপুর ১২:০০<br>
+              <strong>শনিবার:</strong> সাপ্তাহিক ছুটি
+            </p>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="bg-white rounded-lg shadow-lg">
+          <div class="bg-gradient-to-r from-blue-600 to-green-600 text-white text-center py-4 rounded-t-lg">
+            <h2 class="text-2xl font-semibold">আমাদের সাথে যোগাযোগ করুন</h2>
+          </div>
+          
+          <div class="p-6">
+            <form action="#" method="POST" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-gray-700 mb-2">আপনার নাম *</label>
+                  <input type="text" id="name" name="name" required 
+                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                    placeholder="আপনার পূর্ণ নাম লিখুন">
+                </div>
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">মোবাইল নম্বর *</label>
+                  <input type="tel" id="phone" name="phone" required 
+                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                    placeholder="০১৭xxxxxxxx">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700 mb-2">ইমেইল</label>
+                  <input type="email" id="email" name="email" 
+                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                    placeholder="your@email.com">
+                </div>
+                <div>
+                  <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">বিষয় *</label>
+                  <select id="subject" name="subject" required 
+                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                    <option value="">বিষয় নির্বাচন করুন</option>
+                    <option value="admission">ভর্তি সংক্রান্ত</option>
+                    <option value="academic">একাডেমিক তথ্য</option>
+                    <option value="result">ফলাফল সংক্রান্ত</option>
+                    <option value="certificate">সার্টিফিকেট</option>
+                    <option value="complaint">অভিযোগ</option>
+                    <option value="other">অন্যান্য</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">বার্তা *</label>
+                <textarea id="message" name="message" rows="5" required 
+                  class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                  placeholder="আপনার বার্তা এখানে লিখুন..."></textarea>
+              </div>
+
+              <div class="text-center">
+                <button type="submit" 
+                  class="bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-3 rounded-md hover:from-blue-700 hover:to-green-700 transition-all duration-300 transform hover:scale-105 font-semibold">
+                  <i class="fas fa-paper-plane mr-2"></i>
+                  বার্তা পাঠান
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="lg:col-span-1">
+        <!-- Principal Contact -->
+        <div class="bg-white rounded-lg shadow-lg mb-6">
+          <div class="bg-red-600 text-white text-center py-3 rounded-t-lg">
+            <h3 class="text-lg font-semibold">প্রধান শিক্ষক</h3>
+          </div>
+          <div class="p-4 text-center">
+            <div class="w-20 h-20 bg-gray-200 rounded-full mx-auto mb-3 flex items-center justify-center">
+              <i class="fas fa-user text-gray-500 text-2xl"></i>
+            </div>
+            <h4 class="font-semibold text-gray-800">চিরঞ্জিত চাকমা</h4>
+            <p class="text-sm text-gray-600 mt-1">প্রধান শিক্ষক</p>
+            <div class="mt-3 space-y-2 text-sm">
+              <p class="text-gray-600">
+                <i class="fas fa-phone text-green-600 mr-2"></i>
+                ০১৮১২৩৪৫৬৭৮
+              </p>
+              <p class="text-gray-600">
+                <i class="fas fa-envelope text-blue-600 mr-2"></i>
+                principal@school.com
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Emergency Contacts -->
+        <div class="bg-white rounded-lg shadow-lg mb-6">
+          <div class="bg-red-600 text-white text-center py-3 rounded-t-lg">
+            <h3 class="text-lg font-semibold">জরুরি যোগাযোগ</h3>
+          </div>
+          <div class="p-4">
+            <div class="space-y-3 text-sm">
+              <div class="flex items-center">
+                <i class="fas fa-ambulance text-red-600 mr-3"></i>
+                <div>
+                  <span class="font-medium">জাতীয় জরুরি সেবা:</span><br>
+                  <span class="text-gray-600">৯৯৯</span>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-fire text-orange-600 mr-3"></i>
+                <div>
+                  <span class="font-medium">ফায়ার সার্ভিস:</span><br>
+                  <span class="text-gray-600">০৩৫১-৬১১২২</span>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-shield-alt text-blue-600 mr-3"></i>
+                <div>
+                  <span class="font-medium">রাঙ্গামাটি পুলিশ:</span><br>
+                  <span class="text-gray-600">০৩৫১-৬২৩৩৭</span>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-hospital text-green-600 mr-3"></i>
+                <div>
+                  <span class="font-medium">রাঙ্গামাটি সদর হাসপাতাল:</span><br>
+                  <span class="text-gray-600">০৩৫১-৬২২৮৪</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="bg-white rounded-lg shadow-lg mb-6">
+          <div class="bg-blue-600 text-white text-center py-3 rounded-t-lg">
+            <h3 class="text-lg font-semibold">সামাজিক যোগাযোগ মাধ্যম</h3>
+          </div>
+          <div class="p-4">
+            <div class="flex justify-center space-x-4">
+              <a href="#" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                <i class="fab fa-facebook text-lg"></i>
+              </a>
+              <a href="#" class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition-colors">
+                <i class="fab fa-youtube text-lg"></i>
+              </a>
+              <a href="mailto:ictlab114296@gmail.com" class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white hover:bg-green-700 transition-colors">
+                <i class="fas fa-envelope text-lg"></i>
+              </a>
+              <a href="https://wa.me/+8801303252317" class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 transition-colors">
+                <i class="fab fa-whatsapp text-lg"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="bg-white rounded-lg shadow-lg">
+          <div class="bg-gray-800 text-white text-center py-3 rounded-t-lg">
+            <h3 class="text-lg font-semibold">আমাদের অবস্থান</h3>
+          </div>
+          <div class="p-4">
+            <div class="bg-gray-100 h-48 rounded-md flex items-center justify-center">
+              <div class="text-center text-gray-500">
+                <i class="fas fa-map-marker-alt text-3xl mb-2"></i>
+                <p class="text-sm">Google Map এর জন্য<br>ইন্টারনেট সংযোগ প্রয়োজন</p>
+                <a href="https://maps.google.com/?q=Rangamati+Sadar,+Rangamati" target="_blank" 
+                   class="inline-block mt-2 bg-blue-600 text-white px-3 py-1 rounded text-xs hover:bg-blue-700">
+                  Google Map এ দেখুন
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="mt-12">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">সচরাচর জিজ্ঞাসিত প্রশ্ন</h2>
+        <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h4 class="font-semibold text-gray-800 mb-3 flex items-center">
+            <i class="fas fa-question-circle text-blue-600 mr-2"></i>
+            ভর্তির জন্য কী কী কাগজপত্র প্রয়োজন?
+          </h4>
+          <p class="text-gray-600 text-sm">
+            ভর্তির জন্য জন্ম নিবন্ধন সার্টিফিকেট, পূর্বের শ্রেণীর সার্টিফিকেট, ৪ কপি পাসপোর্ট সাইজ ছবি এবং অভিভাবকের জাতীয় পরিচয়পত্রের ফটোকপি প্রয়োজন।
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h4 class="font-semibold text-gray-800 mb-3 flex items-center">
+            <i class="fas fa-question-circle text-green-600 mr-2"></i>
+            স্কুলে কোন কোন বিভাগ আছে?
+          </h4>
+          <p class="text-gray-600 text-sm">
+            আমাদের স্কুলে বিজ্ঞান, মানবিক ও ব্যবসায় শিক্ষা - এই তিনটি বিভাগ রয়েছে। ষষ্ঠ থেকে দশম শ্রেণী পর্যন্ত শিক্ষা কার্যক্রম পরিচালিত হয়।
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h4 class="font-semibold text-gray-800 mb-3 flex items-center">
+            <i class="fas fa-question-circle text-purple-600 mr-2"></i>
+            স্কুলের ছুটির সময় কখন?
+          </h4>
+          <p class="text-gray-600 text-sm">
+            স্কুল সকাল ৮:০০টা থেকে দুপুর ১:৩০টা পর্যন্ত খোলা থাকে। শুক্রবার দুপুর ১২:০০টায় ছুটি এবং শনিবার সাপ্তাহিক ছুটি।
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h4 class="font-semibold text-gray-800 mb-3 flex items-center">
+            <i class="fas fa-question-circle text-red-600 mr-2"></i>
+            ফলাফল কখন প্রকাশ হয়?
+          </h4>
+          <p class="text-gray-600 text-sm">
+            প্রতিটি পরীক্ষার পর ১৫-২০ দিনের মধ্যে ফলাফল প্রকাশ করা হয়। ফলাফল স্কুলের নোটিশ বোর্ড এবং ওয়েবসাইটে প্রকাশিত হয়।
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer
+    class="mt-12 px-[15px] py-[40px] bg-[url('https://jbghs.netlify.app/assets/image/footer_top_bg.png')] bg-bottom bg-no-repeat bg-contain shadow-[inset_0_0_0_2000px_rgba(255,255,255,0.77)]">
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <h4 class="text-xl text-gray-800 font-semibold">খারিক্ষ্যং উচ্চ বিদ্যালয়</h4>
+          <p>স্কুল কোডঃ ৪৭৬০ | এমপিও: ০৪১০০১১৩০১</p>
+          <p class="mb-2 text-gray-600">প্রধান শিক্ষক: চিরঞ্জিত চাকমা</p>
+          <div class="flex space-x-4 mt-4 justify-center">
+            <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fab fa-facebook text-2xl"></i></a>
+            <a href="mailto:ictlab114296@gmail.com" class="text-red-400 hover:text-red-300"><i
+                class="fas fa-envelope text-2xl"></i></a>
+            <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fab fa-twitter text-2xl"></i></a>
+            <a href="#" class="text-red-600 hover:text-red-500"><i class="fab fa-youtube text-2xl"></i></a>
+          </div>
+        </div>
+        <div class="text-center">
+          <h5 class="font-semibold mb-2">যোগাযোগ</h5>
+          <p class="text-gray-800">রাঙ্গামাটি সদর, রাঙ্গামাটি</p>
+          <p class="text-gray-800">মোবাইল: ০১৩০৩২৫২৩১৭</p>
+          <p class="text-gray-800">ইমেইল: school@gmail.com</p>
+        </div>
+        <div class="text-center">
+          <h5 class="font-semibold mb-2 text-gray-800">প্রযুক্তি সহায়তায়</h5>
+          <p class="text-gray-800">মুশফিকুর রহমান</p>
+          <p class="text-gray-800">সফটওয়্যার ইঞ্জিনিয়ার</p>
+          <p class="text-gray-800">ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটি</p>
+          <p class="text-gray-800">হোয়াটসঅ্যাপ: <a href="https://wa.me/+8801303252317">01303252317</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+    });
+
+    closeMenu.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+
+    // Toggle desktop dropdowns
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      dropdown.classList.toggle('hidden');
+    }
+
+    // Toggle mobile menu
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+      }
+    });
+
+    // Form submission (basic validation)
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Basic form validation
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      
+      if (!name || !phone || !subject || !message) {
+        alert('অনুগ্রহ করে সকল প্রয়োজনীয় ক্ষেত্র পূরণ করুন।');
+        return;
+      }
+      
+      // Phone number validation (basic)
+      const phoneRegex = /^01[3-9]\d{8}$/;
+      if (!phoneRegex.test(phone)) {
+        alert('সঠিক মোবাইল নম্বর দিন (০১৩xxxxxxxx থেকে ০১৯xxxxxxxx)');
+        return;
+      }
+      
+      // Success message (in real application, this would submit to server)
+      alert('আপনার বার্তা সফলভাবে পাঠানো হয়েছে। আমরা শীঘ্রই আপনার সাথে যোগাযোগ করবো।');
+      
+      // Reset form
+      this.reset();
+    });
+  </script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
